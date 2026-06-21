@@ -3,112 +3,313 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your AI Controller — practical AI for regulatory reporting</title>
-<meta name="description" content="A weekly newsletter on using AI in regulatory reporting, accounting, and finance. Practical, control-aware, written by a practitioner.">
+<title>Your AI Controller — practical, control-aware AI for regulatory reporting</title>
+<meta name="description" content="A weekly newsletter and toolkit on using AI in regulatory reporting, accounting, and finance — what works, what to avoid, and the controls that keep you compliant. Written by a current practitioner.">
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#161d3a">
+<meta name="theme-color" content="#0f1f3d">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Your AI Controller">
-<meta property="og:title" content="Your AI Controller — practical AI for regulatory reporting">
-<meta property="og:description" content="A weekly newsletter on using AI in regulatory reporting, accounting, and finance. Practical, control-aware, written by a practitioner.">
+<meta property="og:title" content="Your AI Controller — practical, control-aware AI for regulatory reporting">
+<meta property="og:description" content="A weekly newsletter and toolkit on using AI in regulatory reporting, accounting, and finance. Practical, control-aware, written by a current practitioner.">
 <meta property="og:url" content="https://your-ai-controller.com/">
 <meta property="og:image" content="https://your-ai-controller.com/og-1200x630.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Your AI Controller — practical AI for regulatory reporting">
-<meta name="twitter:description" content="A weekly newsletter on using AI in regulatory reporting, accounting, and finance.">
+<meta name="twitter:title" content="Your AI Controller — practical, control-aware AI for regulatory reporting">
+<meta name="twitter:description" content="A weekly newsletter and toolkit on using AI in regulatory reporting, accounting, and finance.">
 <meta name="twitter:image" content="https://your-ai-controller.com/og-1200x630.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --navy:#13294b; --navy-2:#1f3a5f; --ink:#1f2937; --muted:#5b6470;
-    --line:#e4e7ec; --bg:#ffffff; --bg-soft:#f7f9fc; --accent:#2b6cb0;
+    --navy:#13294b; --navy-deep:#0f1f3d; --ink:#1f2937; --muted:#5b6470;
+    --line:#e6e9ef; --bg:#ffffff; --soft:#f6f8fc; --accent:#2b6cb0; --accent-dk:#235a93;
+    --accent-soft:#eaf2fb; --radius:14px; --maxw:1080px;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    color:var(--ink);background:var(--bg);line-height:1.6}
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
-  header{background:#161d3a;color:#fff}
-  .hero{padding:56px 0 56px;text-align:center}
-  .logo{display:block;margin:0 auto 6px;width:210px;max-width:72%;height:auto}
-  h1{font-size:38px;line-height:1.15;margin:0 0 14px;font-weight:700}
-  .tag{font-size:16px;color:#d7e2f1;margin:0 auto 8px;max-width:650px}
-  .sub{font-size:14px;color:#a9bcd6;margin:0 auto 30px;max-width:760px}
-  .signup{display:flex;gap:10px;flex-wrap:wrap;max-width:480px}
-  .signup input{flex:1 1 220px;padding:13px 14px;border:1px solid transparent;border-radius:8px;font-size:15px}
-  .signup button{padding:13px 22px;border:0;border-radius:8px;background:var(--accent);color:#fff;
-    font-size:15px;font-weight:600;cursor:pointer}
-  .signup button:hover{background:#235a93}
-  .cta{display:inline-block;padding:14px 28px;border-radius:8px;background:var(--accent);color:#fff;
-    font-size:16px;font-weight:600;text-decoration:none}
-  .cta:hover{background:#235a93}
-  .note{font-size:13px;color:#8aa0c0;margin:12px 0 0}
-  section{padding:52px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:24px;margin:0 0 16px;color:var(--navy)}
-  p{margin:0 0 16px;font-size:17px}
-  .lead{font-size:18px;color:var(--ink)}
-  ul{padding-left:20px;margin:0 0 8px}
-  li{margin:0 0 8px;font-size:17px}
-  .soft{background:var(--bg-soft)}
-  .pill{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--accent);background:#eaf2fb;padding:4px 10px;border-radius:999px;margin:0 0 14px}
-  footer{padding:36px 0;color:var(--muted);font-size:14px}
-  footer a{color:var(--muted)}
-  @media(max-width:560px){.hero{padding:52px 0 48px}h1{font-size:32px}}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{color:var(--accent-dk)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .narrow{max-width:820px;margin:0 auto}
+  h1,h2,h3{color:var(--navy);font-weight:800;letter-spacing:-0.02em;margin:0}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+  .brand img{width:32px;height:32px;border-radius:50%}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{color:var(--ink);font-weight:500;font-size:15px}
+  .nav-links a:hover{color:var(--navy)}
+  .btn{display:inline-block;padding:11px 20px;border-radius:10px;background:var(--accent);color:#fff;
+    font-weight:600;font-size:15px;cursor:pointer;border:0;transition:background .15s}
+  .btn:hover{background:var(--accent-dk);color:#fff}
+  .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--line)}
+  .btn-ghost:hover{background:var(--soft);color:var(--navy)}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none}}
+
+  /* hero */
+  .hero{padding:84px 0 72px;text-align:center;background:
+    radial-gradient(1100px 480px at 50% -8%, #eef4fc 0%, rgba(238,244,252,0) 70%)}
+  .hero h1{font-size:54px;line-height:1.08;margin:18px auto 0;max-width:14ch}
+  .hero .lead{font-size:19px;color:var(--muted);max-width:60ch;margin:20px auto 0}
+  .hero-form{max-width:520px;margin:34px auto 0}
+  .microcopy{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+  .sample-link{display:inline-block;margin-top:8px;font-weight:600;font-size:15px}
+  @media(max-width:720px){.hero{padding:56px 0 48px}.hero h1{font-size:38px}}
+
+  /* trust strip */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft)}
+  .trust-in{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;padding:18px 24px;
+    font-size:14px;color:var(--muted);font-weight:500}
+  .trust-in b{color:var(--navy)}
+  .dot{color:var(--accent);font-weight:800}
+
+  /* sections */
+  section.block{padding:78px 0}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 44px}
+  .sec-head h2{font-size:34px;line-height:1.15;margin-top:12px}
+  .sec-head p{color:var(--muted);font-size:17px;margin:14px 0 0}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+    transition:box-shadow .2s, transform .2s}
+  .card:hover{box-shadow:0 12px 30px rgba(19,41,75,.08);transform:translateY(-2px)}
+  .card h3{font-size:19px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15.5px;margin:0}
+  .ico{width:44px;height:44px;border-radius:11px;background:var(--accent-soft);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px;font-weight:800}
+
+  /* narrative */
+  .shift{background:var(--navy-deep);color:#dbe6f5}
+  .shift .eyebrow{color:#7fb0e8}
+  .shift h2{color:#fff;font-size:34px;line-height:1.18;max-width:18ch;margin:12px auto 0}
+  .shift p{color:#b9c8de;font-size:18px;max-width:62ch;margin:20px auto 0}
+  .shift .narrow{text-align:center}
+
+  /* tools */
+  .badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:4px 10px;border-radius:999px;margin-bottom:14px}
+  .badge.beta{background:var(--accent-soft);color:var(--accent)}
+  .badge.soon{background:#eef0f4;color:#76808f}
+  .card .tool-cta{display:inline-block;margin-top:16px;font-weight:600;font-size:14.5px}
+
+  /* issues */
+  .issues{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:820px){.issues{grid-template-columns:1fr}}
+  .issue{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:box-shadow .2s,transform .2s}
+  .issue:hover{box-shadow:0 12px 30px rgba(19,41,75,.08);transform:translateY(-2px)}
+  .issue .date{font-size:13px;color:var(--muted);font-weight:600}
+  .issue h3{font-size:18px;line-height:1.3;margin:8px 0 0}
+  .issue p{color:var(--muted);font-size:15px;margin:10px 0 0}
+  .issue .read{margin-top:auto;padding-top:16px;font-weight:600;font-size:14.5px}
+
+  /* final cta */
+  .cta-band{background:linear-gradient(180deg,#13294b,#0f1f3d);color:#fff;text-align:center;padding:72px 0}
+  .cta-band h2{color:#fff;font-size:32px;max-width:18ch;margin:0 auto}
+  .cta-band p{color:#b9c8de;font-size:17px;margin:14px auto 26px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta-band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.28)}
+  .cta-band .btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff}
+
+  /* footer */
+  footer{background:var(--navy-deep);color:#8da3c4;padding:44px 0;font-size:14px}
+  .foot-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+    padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700}
+  .foot-brand img{width:30px;height:30px;border-radius:50%}
+  footer a{color:#a9bcd6}
+  .foot-bottom{padding-top:20px;color:#6f87a9;line-height:1.7}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap hero">
-    <img class="logo" src="logo.png" alt="Your AI Controller">
-    <h1>AI Insight for Regulatory Reporting</h1>
-    <p class="tag">A weekly newsletter for regulatory reporting and accounting professionals: what actually works, what to avoid, and the controls that keep you safe.</p>
-    <p class="sub">Written by a current practitioner - not a vendor selling you something.</p>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="emblem.png" alt=""> Your AI Controller</a>
+    <div class="nav-links">
+      <a href="#newsletter">Newsletter</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#subscribe">Subscribe</a>
+    </div>
+  </div>
+</nav>
 
-    <a class="cta" href="https://your-ai-controller.beehiiv.com" target="_blank" rel="noopener">Get the weekly issue</a>
-    <p class="note">Free. Unsubscribe anytime.</p>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">A weekly newsletter + toolkit</p>
+    <h1>AI for regulatory reporting, without breaking anything.</h1>
+    <p class="lead">Practical, control-aware guidance for accounting and regulatory-reporting professionals: what actually works, what to avoid, and the guardrails that keep you compliant. Written by a current practitioner — not a vendor.</p>
+    <div class="hero-form" id="subscribe">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="7d66f769-b94f-4e0a-b8da-4b07b850db08"></script>
+    </div>
+    <p class="microcopy">Free · one issue a week · unsubscribe anytime</p>
+    <a class="sample-link" href="https://your-ai-controller.beehiiv.com/p/how-to-start-using-ai-in-regulatory-reporting-without-breaking-anything" target="_blank" rel="noopener">Read a sample issue →</a>
   </div>
 </header>
 
-<section>
+<div class="trust">
+  <div class="trust-in">
+    <span><b>CPA</b></span><span class="dot">·</span>
+    <span><b>10+ years</b> in audit &amp; regulatory reporting</span><span class="dot">·</span>
+    <span>Built on real reporting work, not theory</span>
+  </div>
+</div>
+
+<section class="block" id="newsletter">
   <div class="wrap">
-    <h2>What this is</h2>
-    <p class="lead">A weekly, practical guide to using AI in regulatory reporting, accounting, and finance.</p>
-    <p>Each issue gives you one idea you can use this week, the guardrails that keep it safe in a highly regulated environment, and an honest take on where AI provides the best benefit for you and your team - the same version I give to my team today.</p>
+    <div class="sec-head">
+      <p class="eyebrow">What you get</p>
+      <h2>One practical idea a week — with the controls built in</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ico">1</div>
+        <h3>One usable idea a week</h3>
+        <p>A specific technique you can apply to your reporting work this week — not think-pieces or hype.</p>
+      </div>
+      <div class="card">
+        <div class="ico">✓</div>
+        <h3>The guardrails, every time</h3>
+        <p>Every idea ships with the controls that keep it safe in a regulated environment. Verify against source, keep your sign-off.</p>
+      </div>
+      <div class="card">
+        <div class="ico">★</div>
+        <h3>An honest take</h3>
+        <p>Where AI earns its keep, and where it doesn't belong. No vendor pitch — nothing to sell you.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="soft">
-  <div class="wrap">
-    <h2>Who writes it</h2>
-    <p>I'm a CPA. I spent ten years in public accounting leading integrated audits of large filers, then moved into regulatory reporting in the corporate world, where I've spent the latter half of my career.</p>
-    <p>AI is the next big challenge, and where I've focused my efforts - learning where it earns its keep and where it doesn't belong. This is the practical guidance I'd hand a teammate, built on hard-won experience.</p>
+<section class="block shift">
+  <div class="wrap narrow">
+    <p class="eyebrow">The shift</p>
+    <h2>AI shouldn't replace you. It should move you up.</h2>
+    <p>The grind — categorizing, tying out, drafting, double-checking — is exactly what AI is good at. Your judgment, your read of the instructions, and your sign-off are exactly what it isn't. Done right, AI takes the busywork and you move into review: managing the output, applying judgment, owning the controls. Every step it takes should be one you can see, check, and defend in an exam.</p>
   </div>
 </section>
 
-<section>
+<section class="block" id="tools">
   <div class="wrap">
-    <p class="pill">Coming soon</p>
-    <h2>Tools, not just talk</h2>
-    <p>I'm building AI tools for regulatory reporting - starting with an assistant that answers "where do I map this product?" and "what does this line from the instructions mean?" straight from the reporting instructions, with citations you can check.</p>
-    <p>Demos will live here. Subscribe to get first access.</p>
+    <div class="sec-head">
+      <p class="eyebrow">Toolkit</p>
+      <h2>Tools built for regulatory reporting</h2>
+      <p>I'm building practical AI tools for reg reporting — the kind no general bookkeeping product makes. Subscribers get first access.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="badge beta">Beta · request access</span>
+        <h3>Reg-Instruction Q&amp;A</h3>
+        <p>Ask plain-English questions about reporting instructions and get answers with citations you can verify.</p>
+        <a class="tool-cta" href="#subscribe">Request early access →</a>
+      </div>
+      <div class="card">
+        <span class="badge soon">Coming soon</span>
+        <h3>Close Checklist Generator</h3>
+        <p>Turn instructions and process docs into a review-ready month-end close checklist in minutes.</p>
+        <a class="tool-cta" href="#subscribe">Get notified →</a>
+      </div>
+      <div class="card">
+        <span class="badge soon">Coming soon</span>
+        <h3>Reg-Reporting Prompt Library</h3>
+        <p>Vetted, control-aware prompts for the reporting tasks you do every cycle.</p>
+        <a class="tool-cta" href="#subscribe">Get notified →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block soft" style="background:var(--soft)" id="issues">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">From the newsletter</p>
+      <h2>Latest issues</h2>
+    </div>
+    <div class="issues" id="issues-list">
+      <!-- TODO: wire to beehiiv RSS (build-time GitHub Action). Hardcoded latest issue for now. -->
+      <a class="issue" href="https://your-ai-controller.beehiiv.com/p/how-to-start-using-ai-in-regulatory-reporting-without-breaking-anything" target="_blank" rel="noopener">
+        <span class="date">June 2026 · Issue 01</span>
+        <h3>How to start using AI in regulatory reporting (without breaking anything)</h3>
+        <p>Five places to start, three guardrails, and a first-week plan.</p>
+        <span class="read">Read the issue →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap narrow">
+    <div class="sec-head" style="text-align:left;margin-bottom:24px">
+      <p class="eyebrow">Who writes it</p>
+      <h2>A practitioner, not a vendor</h2>
+    </div>
+    <p style="font-size:17px;color:var(--ink)">I'm a CPA. I spent ten years in public accounting leading integrated audits of large filers, then moved into regulatory reporting in the corporate world, where I've spent the latter half of my career.</p>
+    <p style="font-size:17px;color:var(--muted)">AI is the next big challenge — and where I've focused my efforts: learning where it earns its keep and where it doesn't belong, and building the controls around it. This is the practical guidance I'd hand a teammate, built on hard-won experience.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Use AI in your reporting — safely.</h2>
+    <p>Join free. One practical, control-aware issue a week.</p>
+    <div class="cta-row">
+      <a class="btn" href="#subscribe">Subscribe free</a>
+      <a class="btn btn-ghost" href="https://your-ai-controller.beehiiv.com/p/how-to-start-using-ai-in-regulatory-reporting-without-breaking-anything" target="_blank" rel="noopener">Read a sample</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Educational only; not official guidance or the views of any employer. Always verify against primary-source instructions.</p>
-    <p>&copy; 2026 Your AI Controller.</p>
+    <div class="foot-top">
+      <span class="foot-brand"><img src="emblem.png" alt=""> Your AI Controller</span>
+      <span>Practical, control-aware AI for regulatory reporting.</span>
+    </div>
+    <div class="foot-bottom">
+      <p>Educational only; not official guidance or the views of any employer. Always verify against primary-source instructions.</p>
+      <p>&copy; 2026 Your AI Controller.</p>
+    </div>
   </div>
 </footer>
 
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Your AI Controller",
+  "url":"https://your-ai-controller.com/",
+  "logo":"https://your-ai-controller.com/icon-512.png",
+  "description":"A weekly newsletter and toolkit on using AI in regulatory reporting, accounting, and finance — practical and control-aware, written by a current practitioner."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Your AI Controller",
+  "url":"https://your-ai-controller.com/"
+}
+</script>
+
+<script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
 </html>
