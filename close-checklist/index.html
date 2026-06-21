@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Month-End Close Checklist for Regulatory Reporting (free) | Your AI Controller</title>
+<meta name="description" content="A free, control-aware month-end close checklist for regulatory reporting and accounting teams. Track every phase, flag the controls, add your own steps, and export. Built by a practitioner.">
+<link rel="canonical" href="https://your-ai-controller.com/close-checklist/">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f1f3d">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Your AI Controller">
+<meta property="og:title" content="Month-End Close Checklist for Regulatory Reporting — free, control-aware">
+<meta property="og:description" content="A free, control-aware month-end close checklist for reg reporting and accounting. Track phases, flag controls, add your own steps, export.">
+<meta property="og:url" content="https://your-ai-controller.com/close-checklist/">
+<meta property="og:image" content="https://your-ai-controller.com/og-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Month-End Close Checklist for Regulatory Reporting">
+<meta name="twitter:description" content="Free, control-aware month-end close checklist for reg reporting teams.">
+<meta name="twitter:image" content="https://your-ai-controller.com/og-1200x630.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{--navy:#13294b;--navy-deep:#0f1f3d;--ink:#1f2937;--muted:#5b6470;--line:#e6e9ef;--bg:#fff;
+    --soft:#f6f8fc;--accent:#2b6cb0;--accent-dk:#235a93;--accent-soft:#eaf2fb;--ok:#1f7a44;--radius:14px;--maxw:880px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-dk)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--navy);font-weight:800;letter-spacing:-.02em;margin:0}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy)}
+  .brand img{width:32px;height:32px;border-radius:50%}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links a{color:var(--ink);font-weight:500;font-size:15px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:15px;cursor:pointer;border:0}
+  .btn:hover{background:var(--accent-dk);color:#fff}
+  @media(max-width:680px){.nav-links a:not(.btn){display:none}}
+
+  .hero{padding:60px 0 22px;text-align:center;background:radial-gradient(1000px 420px at 50% -10%,#eef4fc 0%,rgba(238,244,252,0) 70%)}
+  .hero h1{font-size:40px;line-height:1.1;margin:14px auto 0;max-width:20ch}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:62ch;margin:16px auto 0}
+  @media(max-width:680px){.hero h1{font-size:30px}}
+  .guard{max-width:720px;margin:24px auto 0;background:#fff8ec;border:1px solid #f1dfba;border-radius:12px;padding:13px 18px;font-size:14px;color:#7a5b1e;text-align:left}
+  .guard b{color:#5c4413}
+
+  .toolbar{position:sticky;top:64px;z-index:40;background:#fff;border-bottom:1px solid var(--line);padding:14px 0}
+  .toolbar-in{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .progress{flex:1 1 240px;min-width:200px}
+  .bar{height:9px;background:#eef0f4;border-radius:999px;overflow:hidden}
+  .bar span{display:block;height:100%;width:0;background:var(--ok);transition:width .25s}
+  .pct{font-size:13px;color:var(--muted);font-weight:600;margin-top:5px}
+  .tbtn{font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--soft);color:var(--navy);cursor:pointer}
+  .tbtn:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--accent)}
+
+  main{padding:30px 0 60px}
+  .phase{margin:0 0 26px}
+  .phase h2{font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+  .item{display:flex;align-items:flex-start;gap:12px;padding:11px 6px;border-bottom:1px solid #f2f4f8}
+  .item input[type=checkbox]{margin-top:3px;width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto;cursor:pointer}
+  .item label{flex:1;font-size:15.5px;cursor:pointer}
+  .item.done label{color:#9aa3b0;text-decoration:line-through}
+  .ctrl{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 7px;border-radius:6px;margin-left:8px;vertical-align:middle}
+  .rm{flex:0 0 auto;border:0;background:none;color:#c2c8d2;cursor:pointer;font-size:16px;line-height:1}
+  .rm:hover{color:#e05656}
+  .additem{display:flex;gap:8px;margin-top:10px}
+  .additem input{flex:1;padding:9px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit}
+  .additem button{font-size:13.5px;font-weight:600;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--navy);cursor:pointer}
+
+  .cta-band{background:linear-gradient(180deg,#13294b,#0f1f3d);color:#fff;text-align:center;padding:54px 0;border-radius:18px;margin-top:34px}
+  .cta-band h2{color:#fff;font-size:26px;max-width:24ch;margin:0 auto}
+  .cta-band p{color:#b9c8de;font-size:16px;margin:12px auto 20px}
+  footer{background:var(--navy-deep);color:#8da3c4;padding:38px 0;font-size:14px;margin-top:56px}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;margin-bottom:12px}
+  .foot-brand img{width:30px;height:30px;border-radius:50%}
+  footer a{color:#a9bcd6}
+  @media print{nav,.toolbar,.cta-band,footer,.guard,.additem,.rm{display:none!important}.item.done label{text-decoration:none;color:#000}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/emblem.png" alt=""> Your AI Controller</a>
+    <div class="nav-links">
+      <a href="/#tools">Tools</a>
+      <a href="/prompts/">Prompts</a>
+      <a class="btn" href="/#subscribe">Subscribe</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Free tool</p>
+    <h1>Month-end close checklist for regulatory reporting</h1>
+    <p class="lead">A control-aware close checklist you can actually use — every phase, the controls flagged, your own steps added. Check off as you go (it saves in your browser), then copy or print it.</p>
+    <div class="guard"><b>How to use it:</b> this is a starting template built from common reg-reporting practice — adapt it to your own instructions, process, and policies. The <span class="ctrl">control</span> tags mark steps where a control or reconciliation lives; they're prompts for your judgment, not a substitute for it.</div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap toolbar-in">
+    <div class="progress">
+      <div class="bar"><span id="barfill"></span></div>
+      <div class="pct" id="pct">0 of 0 complete</div>
+    </div>
+    <button class="tbtn" onclick="copyChecklist()">Copy as text</button>
+    <button class="tbtn" onclick="window.print()">Print</button>
+    <button class="tbtn" onclick="resetChecklist()">Reset</button>
+  </div>
+</div>
+
+<main>
+  <div class="wrap" id="checklist"></div>
+
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Want the close done with AI — safely?</h2>
+      <p>Subscribe free for control-aware prompts, worked examples, and the tools that take the grind out of close.</p>
+      <a class="btn" href="/#subscribe">Subscribe free</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand"><img src="/emblem.png" alt=""> Your AI Controller</div>
+    <p>Educational only; not official guidance or the views of any employer. Always verify against primary-source instructions.</p>
+    <p>&copy; 2026 Your AI Controller · <a href="/">Home</a> · <a href="/prompts/">Prompt library</a></p>
+  </div>
+</footer>
+
+<script>
+const DATA = [
+  {phase:"1. Pre-close setup", items:[
+    {t:"Confirm the reporting calendar and due dates for the period", c:1},
+    {t:"Check for instruction changes or new schedules effective this period", c:1},
+    {t:"Confirm data sources, system access, and prior-period workpapers are available", c:0}
+  ]},
+  {phase:"2. Gather", items:[
+    {t:"Pull source data / trial balance / system extracts for the period", c:0},
+    {t:"Collect supporting documentation (schedules, confirmations, memos)", c:0},
+    {t:"Identify new products or transaction types that need a mapping review", c:1}
+  ]},
+  {phase:"3. Prepare", items:[
+    {t:"Map and classify items per the current reporting instructions", c:1},
+    {t:"Prepare each schedule / line item", c:0},
+    {t:"Document key judgments, assumptions, and any instruction interpretations", c:1}
+  ]},
+  {phase:"4. Review & tie-out", items:[
+    {t:"Run internal consistency checks within the report", c:1},
+    {t:"Reconcile to the GL and to other regulatory / financial reports", c:1},
+    {t:"Perform variance analysis vs. prior period; explain material movements", c:1},
+    {t:"Independent reviewer checks and signs off", c:1}
+  ]},
+  {phase:"5. Submit & document", items:[
+    {t:"Clear all submission edits / validation checks", c:1},
+    {t:"Obtain required approvals and sign-offs", c:1},
+    {t:"Submit by the deadline and capture the confirmation", c:0},
+    {t:"Archive workpapers and support per your retention policy", c:1}
+  ]}
+];
+const KEY='yac-close-checklist-v1';
+let state = JSON.parse(localStorage.getItem(KEY)||'{}'); // {id:true}
+let custom = JSON.parse(localStorage.getItem(KEY+'-custom')||'{}'); // {phaseIdx:[text,...]}
+
+function save(){localStorage.setItem(KEY,JSON.stringify(state));localStorage.setItem(KEY+'-custom',JSON.stringify(custom));}
+function idFor(p,i){return 'p'+p+'i'+i;}
+
+function render(){
+  const root=document.getElementById('checklist'); root.innerHTML='';
+  DATA.forEach((ph,pi)=>{
+    const sec=document.createElement('div'); sec.className='phase';
+    sec.innerHTML='<h2>'+ph.phase+'</h2>';
+    const all=[...ph.items.map(it=>({t:it.t,c:it.c})), ...((custom[pi]||[]).map(t=>({t,c:0,cust:true})))];
+    all.forEach((it,ii)=>{
+      const id=idFor(pi,ii);
+      const row=document.createElement('div'); row.className='item'+(state[id]?' done':'');
+      const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=!!state[id]; cb.id=id;
+      cb.onchange=()=>{state[id]=cb.checked; if(!cb.checked) delete state[id]; save(); row.classList.toggle('done',cb.checked); updateProgress();};
+      const lab=document.createElement('label'); lab.htmlFor=id; lab.innerHTML=esc(it.t)+(it.c?' <span class="ctrl">control</span>':'');
+      row.appendChild(cb); row.appendChild(lab);
+      if(it.cust){const rm=document.createElement('button'); rm.className='rm'; rm.textContent='×'; rm.title='Remove';
+        rm.onclick=()=>{custom[pi].splice(ii-ph.items.length,1); save(); render();}; row.appendChild(rm);}
+      sec.appendChild(row);
+    });
+    const add=document.createElement('div'); add.className='additem';
+    add.innerHTML='<input type="text" placeholder="Add your own step…"><button>Add</button>';
+    const inp=add.querySelector('input'), btn=add.querySelector('button');
+    const doAdd=()=>{const v=inp.value.trim(); if(!v)return; (custom[pi]=custom[pi]||[]).push(v); save(); render();};
+    btn.onclick=doAdd; inp.onkeydown=e=>{if(e.key==='Enter')doAdd();};
+    sec.appendChild(add);
+    root.appendChild(sec);
+  });
+  updateProgress();
+}
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function counts(){let total=0,done=0; DATA.forEach((ph,pi)=>{const n=ph.items.length+((custom[pi]||[]).length); total+=n; for(let i=0;i<n;i++) if(state[idFor(pi,i)]) done++;}); return {total,done};}
+function updateProgress(){const {total,done}=counts(); document.getElementById('barfill').style.width=(total?Math.round(done/total*100):0)+'%'; document.getElementById('pct').textContent=done+' of '+total+' complete';}
+function resetChecklist(){if(!confirm('Reset all progress and custom steps?'))return; state={}; custom={}; save(); render();}
+function copyChecklist(){
+  let out='Month-End Close Checklist — Regulatory Reporting\n(via your-ai-controller.com)\n';
+  DATA.forEach((ph,pi)=>{out+='\n'+ph.phase+'\n';
+    const all=[...ph.items.map(it=>it.t), ...((custom[pi]||[]))];
+    all.forEach((t,ii)=>{out+='  ['+(state[idFor(pi,ii)]?'x':' ')+'] '+t+'\n';});});
+  navigator.clipboard.writeText(out).then(()=>{const b=event.target;const o=b.textContent;b.textContent='Copied!';setTimeout(()=>b.textContent=o,1400);});
+}
+render();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebApplication",
+  "name":"Month-End Close Checklist for Regulatory Reporting",
+  "applicationCategory":"BusinessApplication","operatingSystem":"Web",
+  "url":"https://your-ai-controller.com/close-checklist/",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "publisher":{"@type":"Organization","name":"Your AI Controller","url":"https://your-ai-controller.com/"}
+}
+</script>
+</body>
+</html>
