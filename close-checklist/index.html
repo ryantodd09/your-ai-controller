@@ -44,6 +44,9 @@
   .nav-links a{color:var(--ink);font-weight:500;font-size:15px}
   .btn{display:inline-block;padding:11px 20px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:15px;cursor:pointer;border:0}
   .btn:hover{background:var(--accent-dk);color:#fff}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:linear-gradient(135deg,#3a86d4,#2b6cb0);box-shadow:0 4px 14px rgba(43,108,176,.30);transition:transform .15s,box-shadow .15s,background .15s}
+  .nav-cta:hover{background:linear-gradient(135deg,#4a92dd,#2f74bd);transform:translateY(-1px);box-shadow:0 8px 22px rgba(43,108,176,.45);color:#fff}
+  .nav-cta .arr{transition:transform .15s}.nav-cta:hover .arr{transform:translateX(3px)}
   @media(max-width:680px){.nav-links a:not(.btn){display:none}}
 
   .hero{padding:60px 0 22px;text-align:center;background:radial-gradient(1000px 420px at 50% -10%,#eef4fc 0%,rgba(238,244,252,0) 70%)}
@@ -94,7 +97,7 @@
     <div class="nav-links">
       <a href="/#tools">Tools</a>
       <a href="/prompts/">Prompts</a>
-      <a class="btn" href="/#subscribe">Subscribe</a>
+      <a class="btn nav-cta" href="/#subscribe">Subscribe <span class="arr">→</span></a>
     </div>
   </div>
 </nav>

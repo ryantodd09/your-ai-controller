@@ -59,6 +59,13 @@
   .btn{display:inline-block;padding:11px 20px;border-radius:10px;background:var(--accent);color:#fff;
     font-weight:600;font-size:15px;cursor:pointer;border:0;transition:background .15s}
   .btn:hover{background:var(--accent-dk);color:#fff}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;border-radius:999px;
+    background:linear-gradient(135deg,#3a86d4,#2b6cb0);box-shadow:0 4px 14px rgba(43,108,176,.30);
+    transition:transform .15s,box-shadow .15s,background .15s}
+  .nav-cta:hover{background:linear-gradient(135deg,#4a92dd,#2f74bd);transform:translateY(-1px);
+    box-shadow:0 8px 22px rgba(43,108,176,.45);color:#fff}
+  .nav-cta .arr{transition:transform .15s}
+  .nav-cta:hover .arr{transform:translateX(3px)}
   .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--line)}
   .btn-ghost:hover{background:var(--soft);color:var(--navy)}
   @media(max-width:720px){.nav-links a:not(.btn){display:none}}
@@ -149,7 +156,7 @@
       <a href="#newsletter">Newsletter</a>
       <a href="#tools">Tools</a>
       <a href="#about">About</a>
-      <a class="btn" href="#subscribe">Subscribe</a>
+      <a class="btn nav-cta" href="#subscribe">Subscribe <span class="arr">→</span></a>
     </div>
   </div>
 </nav>
