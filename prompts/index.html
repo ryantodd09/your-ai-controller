@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Prompts for Regulatory Reporting &amp; Accounting | Your AI Controller</title>
-<meta name="description" content="A free, control-aware library of AI prompts for regulatory reporting and accounting — interpret instructions, draft, build checklists, review, and brief leadership. Copy, paste, and verify against source.">
+<meta name="description" content="A free, control-aware library of AI prompts for regulatory reporting and accounting - interpret instructions, draft, build checklists, review, and brief leadership. Copy, paste, and verify against source.">
 <link rel="canonical" href="https://your-ai-controller.com/prompts/">
 
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -14,7 +14,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Your AI Controller">
-<meta property="og:title" content="AI Prompts for Regulatory Reporting & Accounting — free, control-aware">
+<meta property="og:title" content="AI Prompts for Regulatory Reporting & Accounting - free, control-aware">
 <meta property="og:description" content="A free library of vetted, control-aware AI prompts for regulatory reporting and accounting. Copy, paste, and verify against source.">
 <meta property="og:url" content="https://your-ai-controller.com/prompts/">
 <meta property="og:image" content="https://your-ai-controller.com/og-1200x630.png">
@@ -110,9 +110,9 @@
   <div class="wrap">
     <p class="eyebrow">Free tool</p>
     <h1>AI prompts for regulatory reporting &amp; accounting</h1>
-    <p class="lead">A growing library of vetted, control-aware prompts for the work you actually do — interpreting instructions, drafting, building checklists, reviewing, and briefing leadership. Copy, paste, adapt.</p>
+    <p class="lead">A growing library of vetted, control-aware prompts for the work you actually do - interpreting instructions, drafting, building checklists, reviewing, and briefing leadership. Copy, paste, adapt.</p>
     <div class="guard">
-      <b>Three rules before you use these.</b> 1) Company policy — not the tool — decides what data you can put in; use public or approved data only. 2) Treat every answer as a draft and verify it against the primary-source instructions. 3) AI assists; it doesn't sign the workpaper. You still do.
+      <b>Three rules before you use these.</b> 1) Company policy - not the tool - decides what data you can put in; use public or approved data only. 2) Treat every answer as a draft and verify it against the primary-source instructions. 3) AI assists; it doesn't sign the workpaper. You still do.
     </div>
     <div class="controls">
       <input id="q" type="text" placeholder="Search prompts (e.g. checklist, variance, instructions)…" oninput="filterPrompts()">
@@ -134,7 +134,7 @@
     <div class="cat" data-cathead="interpret">Interpret instructions</div>
     <div class="prompt" data-cat="interpret">
       <div class="prompt-head"><h3>Instruction interpreter</h3><button class="copy" onclick="copyPrompt(this)">Copy</button></div>
-      <div class="prompt-text">You are an expert in [report — e.g., the FFIEC Call Report]. Using ONLY the official instructions I paste below, explain in plain English what [schedule / line item] requires: what is included, what is excluded, and the common misreadings. For every point, quote the exact instruction language you relied on. If the instructions are ambiguous or silent, say so explicitly — do not fill the gap with assumptions.
+      <div class="prompt-text">You are an expert in [report - e.g., the FFIEC Call Report]. Using ONLY the official instructions I paste below, explain in plain English what [schedule / line item] requires: what is included, what is excluded, and the common misreadings. For every point, quote the exact instruction language you relied on. If the instructions are ambiguous or silent, say so explicitly - do not fill the gap with assumptions.
 
 Instructions:
 [paste the relevant public instructions]</div>
@@ -142,7 +142,7 @@ Instructions:
     </div>
     <div class="prompt" data-cat="interpret">
       <div class="prompt-head"><h3>"Where does this map?" helper</h3><button class="copy" onclick="copyPrompt(this)">Copy</button></div>
-      <div class="prompt-text">Using only the instructions below, tell me where [product / transaction type] should be reported on [report]. Give the candidate line item(s), the inclusion/exclusion language that supports each, and any line items it is commonly confused with. If the instructions don't clearly resolve it, list the open questions I'd need a specialist to confirm — don't guess.
+      <div class="prompt-text">Using only the instructions below, tell me where [product / transaction type] should be reported on [report]. Give the candidate line item(s), the inclusion/exclusion language that supports each, and any line items it is commonly confused with. If the instructions don't clearly resolve it, list the open questions I'd need a specialist to confirm - don't guess.
 
 Instructions:
 [paste]</div>
@@ -174,11 +174,11 @@ Steps:
 
 Source:
 [paste instructions / process notes]</div>
-      <p class="note"><b>Guardrail:</b> your future self at 9pm during close will thank you — but still review the checklist against the live instructions.</p>
+      <p class="note"><b>Guardrail:</b> your future self at 9pm during close will thank you - but still review the checklist against the live instructions.</p>
     </div>
     <div class="prompt" data-cat="checklist">
       <div class="prompt-head"><h3>Tie-out &amp; cross-check list</h3><button class="copy" onclick="copyPrompt(this)">Copy</button></div>
-      <div class="prompt-text">Based on the instructions below, list the cross-checks and tie-outs I should perform for [schedule] — internal consistency checks and common reconciliations to other reports or schedules. For each, state what should equal what, and why. If a check depends on data I haven't provided, note the assumption.
+      <div class="prompt-text">Based on the instructions below, list the cross-checks and tie-outs I should perform for [schedule] - internal consistency checks and common reconciliations to other reports or schedules. For each, state what should equal what, and why. If a check depends on data I haven't provided, note the assumption.
 
 Instructions:
 [paste]</div>
@@ -189,11 +189,11 @@ Instructions:
     <div class="prompt" data-cat="review">
       <div class="prompt-head"><h3>Common-errors pre-review</h3><button class="copy" onclick="copyPrompt(this)">Copy</button></div>
       <div class="prompt-text">Act as a skeptical reviewer of [schedule]. List the most common errors and red flags, and for each, the specific check I should run before submission. Be concrete. If you're not certain something is an error, label it "verify" rather than asserting it. Order from highest to lowest risk.</div>
-      <p class="note"><b>Guardrail:</b> a second set of eyes that never tires — not a replacement for yours.</p>
+      <p class="note"><b>Guardrail:</b> a second set of eyes that never tires - not a replacement for yours.</p>
     </div>
     <div class="prompt" data-cat="review">
       <div class="prompt-head"><h3>Variance explainer (draft)</h3><button class="copy" onclick="copyPrompt(this)">Copy</button></div>
-      <div class="prompt-text">Given the current-vs-prior values below, draft neutral, factual variance explanations a reviewer would accept. For any variance you cannot explain from the data provided, write "needs explanation" — do not invent a cause. Keep each explanation to one or two sentences.
+      <div class="prompt-text">Given the current-vs-prior values below, draft neutral, factual variance explanations a reviewer would accept. For any variance you cannot explain from the data provided, write "needs explanation" - do not invent a cause. Keep each explanation to one or two sentences.
 
 Data:
 [paste approved figures]</div>
@@ -215,14 +215,14 @@ Notes:
 
 Notes:
 [paste]</div>
-      <p class="note"><b>Guardrail:</b> you know the team and the tone — adjust before sending.</p>
+      <p class="note"><b>Guardrail:</b> you know the team and the tone - adjust before sending.</p>
     </div>
 
     <p id="noresults" class="hidden" style="text-align:center;color:var(--muted);padding:30px">No prompts match that search.</p>
 
     <div class="cta-band">
       <h2>New control-aware prompts every week.</h2>
-      <p>Subscribe free and get the latest prompts, worked examples, and the guardrails — straight to your inbox.</p>
+      <p>Subscribe free and get the latest prompts, worked examples, and the guardrails - straight to your inbox.</p>
       <a class="btn" href="/#subscribe">Subscribe free</a>
     </div>
 

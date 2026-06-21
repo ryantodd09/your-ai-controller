@@ -14,7 +14,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Your AI Controller">
-<meta property="og:title" content="Month-End Close Checklist for Regulatory Reporting — free, control-aware">
+<meta property="og:title" content="Month-End Close Checklist for Regulatory Reporting - free, control-aware">
 <meta property="og:description" content="A free, control-aware month-end close checklist for reg reporting and accounting. Track phases, flag controls, add your own steps, export.">
 <meta property="og:url" content="https://your-ai-controller.com/close-checklist/">
 <meta property="og:image" content="https://your-ai-controller.com/og-1200x630.png">
@@ -103,8 +103,8 @@
   <div class="wrap">
     <p class="eyebrow">Free tool</p>
     <h1>Month-end close checklist for regulatory reporting</h1>
-    <p class="lead">A control-aware close checklist you can actually use — every phase, the controls flagged, your own steps added. Check off as you go (it saves in your browser), then copy or print it.</p>
-    <div class="guard"><b>How to use it:</b> this is a starting template built from common reg-reporting practice — adapt it to your own instructions, process, and policies. The <span class="ctrl">control</span> tags mark steps where a control or reconciliation lives; they're prompts for your judgment, not a substitute for it.</div>
+    <p class="lead">A control-aware close checklist you can actually use - every phase, the controls flagged, your own steps added. Check off as you go (it saves in your browser), then copy or print it.</p>
+    <div class="guard"><b>How to use it:</b> this is a starting template built from common reg-reporting practice - adapt it to your own instructions, process, and policies. The <span class="ctrl">control</span> tags mark steps where a control or reconciliation lives; they're prompts for your judgment, not a substitute for it.</div>
   </div>
 </header>
 
@@ -125,7 +125,7 @@
 
   <div class="wrap">
     <div class="cta-band">
-      <h2>Want the close done with AI — safely?</h2>
+      <h2>Want the close done with AI - safely?</h2>
       <p>Subscribe free for control-aware prompts, worked examples, and the tools that take the grind out of close.</p>
       <a class="btn" href="/#subscribe">Subscribe free</a>
     </div>
@@ -209,7 +209,7 @@ function counts(){let total=0,done=0; DATA.forEach((ph,pi)=>{const n=ph.items.le
 function updateProgress(){const {total,done}=counts(); document.getElementById('barfill').style.width=(total?Math.round(done/total*100):0)+'%'; document.getElementById('pct').textContent=done+' of '+total+' complete';}
 function resetChecklist(){if(!confirm('Reset all progress and custom steps?'))return; state={}; custom={}; save(); render();}
 function copyChecklist(){
-  let out='Month-End Close Checklist — Regulatory Reporting\n(via your-ai-controller.com)\n';
+  let out='Month-End Close Checklist - Regulatory Reporting\n(via your-ai-controller.com)\n';
   DATA.forEach((ph,pi)=>{out+='\n'+ph.phase+'\n';
     const all=[...ph.items.map(it=>it.t), ...((custom[pi]||[]))];
     all.forEach((t,ii)=>{out+='  ['+(state[idFor(pi,ii)]?'x':' ')+'] '+t+'\n';});});
