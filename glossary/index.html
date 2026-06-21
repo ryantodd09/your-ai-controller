@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulatory Reporting &amp; AI Glossary (free) | Your AI Controller</title>
+<meta name="description" content="Plain-English definitions of the regulatory-reporting, AI, and controls terms that matter when you bring AI into reg reporting and accounting. Free, by a current practitioner.">
+<link rel="canonical" href="https://your-ai-controller.com/glossary/">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f1f3d">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Your AI Controller">
+<meta property="og:title" content="Regulatory Reporting & AI Glossary - free, plain-English">
+<meta property="og:description" content="Plain-English definitions of the reg-reporting, AI, and controls terms that matter when you bring AI into regulatory reporting.">
+<meta property="og:url" content="https://your-ai-controller.com/glossary/">
+<meta property="og:image" content="https://your-ai-controller.com/og-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Regulatory Reporting & AI Glossary">
+<meta name="twitter:description" content="Plain-English definitions of the reg-reporting, AI, and controls terms that matter.">
+<meta name="twitter:image" content="https://your-ai-controller.com/og-1200x630.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{--navy:#13294b;--navy-deep:#0f1f3d;--ink:#1f2937;--muted:#5b6470;--line:#e6e9ef;--bg:#fff;
+    --soft:#f6f8fc;--accent:#2b6cb0;--accent-dk:#235a93;--accent-soft:#eaf2fb;--radius:14px;--maxw:880px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-dk)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--navy);font-weight:800;letter-spacing:-.02em;margin:0}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy)}
+  .brand img{width:32px;height:32px;border-radius:50%}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links a{color:var(--ink);font-weight:500;font-size:15px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:15px;cursor:pointer;border:0}
+  .btn:hover{background:var(--accent-dk);color:#fff}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:linear-gradient(135deg,#3a86d4,#2b6cb0);box-shadow:0 4px 14px rgba(43,108,176,.30);transition:transform .15s,box-shadow .15s,background .15s}
+  .nav-cta:hover{background:linear-gradient(135deg,#4a92dd,#2f74bd);transform:translateY(-1px);box-shadow:0 8px 22px rgba(43,108,176,.45);color:#fff}
+  .nav-cta .arr{transition:transform .15s}.nav-cta:hover .arr{transform:translateX(3px)}
+  @media(max-width:680px){.nav-links a:not(.btn){display:none}}
+
+  .hero{padding:64px 0 22px;text-align:center;background:radial-gradient(1000px 420px at 50% -10%,#eef4fc 0%,rgba(238,244,252,0) 70%)}
+  .hero h1{font-size:42px;line-height:1.1;margin:14px auto 0;max-width:20ch}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:62ch;margin:16px auto 0}
+  @media(max-width:680px){.hero h1{font-size:32px}}
+
+  .controls{max-width:760px;margin:28px auto 0}
+  .controls input{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:inherit}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 0}
+  .chip{font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}
+  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  main{padding:30px 0 60px}
+  .cat{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:34px 0 8px;border-bottom:1px solid var(--line);padding-bottom:8px}
+  .term{padding:18px 4px;border-bottom:1px solid #f2f4f8;scroll-margin-top:80px}
+  .term h3{font-size:18px;margin:0 0 6px}
+  .term .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
+  .term p{margin:0;color:var(--muted);font-size:15.5px}
+
+  .cta-band{background:linear-gradient(180deg,#13294b,#0f1f3d);color:#fff;text-align:center;padding:54px 0;border-radius:18px;margin-top:34px}
+  .cta-band h2{color:#fff;font-size:26px;max-width:26ch;margin:0 auto;text-wrap:balance}
+  .cta-band p{color:#b9c8de;font-size:16px;margin:12px auto 20px}
+  footer{background:var(--navy-deep);color:#8da3c4;padding:38px 0;font-size:14px;margin-top:56px}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;margin-bottom:12px}
+  .foot-brand img{width:30px;height:30px;border-radius:50%}
+  footer a{color:#a9bcd6}
+  .hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/emblem.png" alt=""> Your AI Controller</a>
+    <div class="nav-links">
+      <a href="/tools/">Tools</a>
+      <a href="/prompts/">Prompts</a>
+      <a class="btn nav-cta" href="/#subscribe">Subscribe <span class="arr">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Free reference</p>
+    <h1>Regulatory reporting &amp; AI glossary</h1>
+    <p class="lead">Plain-English definitions of the reg-reporting, AI, and controls terms that come up when you bring AI into the reporting process. Written by a current practitioner.</p>
+    <div class="controls">
+      <input id="q" type="text" placeholder="Search terms (e.g. hallucination, walkthrough, FR 2052a)…" oninput="filterTerms()">
+      <div class="filters" id="chips">
+        <button class="chip active" data-cat="all" onclick="setCat(this)">All</button>
+        <button class="chip" data-cat="reg" onclick="setCat(this)">Regulatory reporting</button>
+        <button class="chip" data-cat="ai" onclick="setCat(this)">AI</button>
+        <button class="chip" data-cat="controls" onclick="setCat(this)">Controls &amp; governance</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" id="glossary">
+
+    <div class="cat" data-cathead="reg">Regulatory reporting</div>
+    <div class="term" data-cat="reg" id="ffiec-009"><h3>FFIEC 009<span class="tag">Reg</span></h3><p>The Country Exposure Report - a quarterly filing where larger U.S. banking organizations detail their exposures to foreign countries, so regulators can monitor cross-border and country risk. Known for how granular and adjustment-heavy the exposure classification gets.</p></div>
+    <div class="term" data-cat="reg" id="call-report"><h3>Call Report<span class="tag">Reg</span></h3><p>The Consolidated Reports of Condition and Income (FFIEC 031/041/051) that every U.S. bank files quarterly - a detailed balance sheet, income statement, and supporting schedules.</p></div>
+    <div class="term" data-cat="reg" id="fr-y-9c"><h3>FR Y-9C<span class="tag">Reg</span></h3><p>The quarterly consolidated financial statements that bank holding companies (and similar institutions) file with the Federal Reserve.</p></div>
+    <div class="term" data-cat="reg" id="fr-2052a"><h3>FR 2052a<span class="tag">Reg</span></h3><p>The Complex Institution Liquidity Monitoring Report - granular liquidity data that large banks file to support liquidity ratios (LCR/NSFR) and ongoing monitoring.</p></div>
+    <div class="term" data-cat="reg" id="schedule-line-item"><h3>Schedule / line item<span class="tag">Reg</span></h3><p>A "schedule" is a section of a report covering one topic (loans, deposits, derivatives); a "line item" is a specific reportable value within it, defined by the instructions.</p></div>
+    <div class="term" data-cat="reg" id="reporting-instructions"><h3>Reporting instructions<span class="tag">Reg</span></h3><p>The official, public guidance (FFIEC, Federal Reserve, OCC, FDIC, SEC) that defines exactly what each line item must include, exclude, and how to classify items. The source of truth - and what every AI answer should be checked against.</p></div>
+    <div class="term" data-cat="reg" id="edit-checks"><h3>Edit checks / validations<span class="tag">Reg</span></h3><p>Built-in rules a report must pass before submission - internal-consistency and cross-schedule checks that flag likely errors.</p></div>
+    <div class="term" data-cat="reg" id="interseries-reconciliation"><h3>Interseries reconciliation<span class="tag">Reg</span></h3><p>Tying values across different reports or schedules that should agree (a total on one report matching the same concept on another). A core reporting control - and a natural fit for AI-assisted cross-checking.</p></div>
+    <div class="term" data-cat="reg" id="attestation"><h3>Attestation / sign-off<span class="tag">Reg</span></h3><p>The formal certification by a responsible officer that a report is accurate and complete. AI can prepare and check; a person still signs.</p></div>
+    <div class="term" data-cat="reg" id="materiality"><h3>Materiality threshold<span class="tag">Reg</span></h3><p>A defined level below which an error or item isn't significant enough to correct or report separately. Set by policy and judgment, not the tool.</p></div>
+
+    <div class="cat" data-cathead="ai">AI</div>
+    <div class="term" data-cat="ai" id="llm"><h3>LLM (Large Language Model)<span class="tag">AI</span></h3><p>An AI model trained on vast amounts of text that predicts and generates language - the engine behind tools like ChatGPT, Claude, and Microsoft Copilot.</p></div>
+    <div class="term" data-cat="ai" id="prompt"><h3>Prompt / prompt engineering<span class="tag">AI</span></h3><p>The instruction you give an AI. Prompt engineering is the craft of writing prompts (role, context, constraints) that produce reliable, useful output instead of vague filler.</p></div>
+    <div class="term" data-cat="ai" id="hallucination"><h3>Hallucination<span class="tag">AI</span></h3><p>When an AI states something false with full confidence - an invented citation, number, or rule. The single biggest reason every AI answer in reporting work has to be verified against source.</p></div>
+    <div class="term" data-cat="ai" id="rag"><h3>RAG (Retrieval-Augmented Generation)<span class="tag">AI</span></h3><p>A technique that feeds the AI relevant source documents (e.g., the actual instructions) at query time, so answers are grounded in those documents rather than the model's memory. Reduces hallucination.</p></div>
+    <div class="term" data-cat="ai" id="ai-agent"><h3>AI agent<span class="tag">AI</span></h3><p>An AI system that takes multi-step actions toward a goal - reading documents, running steps, producing finished work - rather than just answering a single prompt.</p></div>
+    <div class="term" data-cat="ai" id="context-window"><h3>Context window<span class="tag">AI</span></h3><p>How much text an AI can consider at once. Inputs beyond the limit get truncated, so what you include - and leave out - matters.</p></div>
+    <div class="term" data-cat="ai" id="grounding"><h3>Grounding / citations<span class="tag">AI</span></h3><p>Tying an AI's answer to specific source text so you can check it. Essential for reg work: an answer you can't trace, you can't defend in an exam.</p></div>
+    <div class="term" data-cat="ai" id="fine-tuning"><h3>Fine-tuning<span class="tag">AI</span></h3><p>Further-training a model on specific data to specialize it. More involved than prompting or RAG - and usually unnecessary for most reporting tasks, which good prompts plus source documents handle.</p></div>
+
+    <div class="cat" data-cathead="controls">Controls &amp; governance</div>
+    <div class="term" data-cat="controls" id="walkthrough"><h3>Control walkthrough<span class="tag">Controls</span></h3><p>Tracing a transaction or process end-to-end to confirm you understand how it works and where the controls sit.</p></div>
+    <div class="term" data-cat="controls" id="design-effectiveness"><h3>Design effectiveness<span class="tag">Controls</span></h3><p>Evaluating whether a control, as designed, <em>would</em> prevent or detect the error it targets - before testing whether it actually operates.</p></div>
+    <div class="term" data-cat="controls" id="operating-effectiveness"><h3>Operating effectiveness<span class="tag">Controls</span></h3><p>Testing whether a control actually operated as designed over a period - the "does it really work, day to day" question.</p></div>
+    <div class="term" data-cat="controls" id="reconciliation"><h3>Reconciliation / tie-out<span class="tag">Controls</span></h3><p>Confirming that two independently derived figures agree (e.g., a report total to the general ledger). A foundational reporting control.</p></div>
+    <div class="term" data-cat="controls" id="human-in-the-loop"><h3>Human-in-the-loop<span class="tag">Controls</span></h3><p>A workflow where AI does the work but a person reviews, judges, and approves before anything is final. The default for control-sensitive use.</p></div>
+    <div class="term" data-cat="controls" id="model-risk"><h3>Model risk management (SR 11-7)<span class="tag">Controls</span></h3><p>Federal Reserve / OCC supervisory guidance on managing the risk that a model - increasingly including AI - is wrong or misused. Covers development, validation, and governance.</p></div>
+    <div class="term" data-cat="controls" id="audit-trail"><h3>Audit trail / explainability<span class="tag">Controls</span></h3><p>A record of what was done and why. For AI: showing the sources, changes, and rationale behind each step so a reviewer or examiner can follow it.</p></div>
+    <div class="term" data-cat="controls" id="segregation-of-duties"><h3>Segregation of duties<span class="tag">Controls</span></h3><p>Splitting a task so no one person controls it end-to-end (preparer is not the reviewer), reducing error and fraud risk.</p></div>
+
+    <p id="noresults" class="hidden" style="text-align:center;color:var(--muted);padding:30px">No terms match that search.</p>
+
+    <div class="cta-band">
+      <h2>One control-aware idea a week.</h2>
+      <p>Subscribe free for practical, plain-English guidance on using AI in regulatory reporting - and the guardrails that keep it safe.</p>
+      <a class="btn nav-cta" href="/#subscribe">Subscribe free <span class="arr">→</span></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand"><img src="/emblem.png" alt=""> Your AI Controller</div>
+    <p>Educational only; not official guidance or the views of any employer. Always verify against primary-source instructions.</p>
+    <p>&copy; 2026 Your AI Controller · <a href="/">Home</a> · <a href="/tools/">Tools</a></p>
+  </div>
+</footer>
+
+<script>
+let cat='all';
+function setCat(el){cat=el.dataset.cat;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c===el));filterTerms();}
+function filterTerms(){
+  const q=(document.getElementById('q').value||'').toLowerCase();let any=false;
+  document.querySelectorAll('.term').forEach(t=>{
+    const okCat=(cat==='all'||t.dataset.cat===cat);
+    const okQ=!q||t.innerText.toLowerCase().includes(q);
+    const show=okCat&&okQ;t.classList.toggle('hidden',!show);if(show)any=true;
+  });
+  document.querySelectorAll('[data-cathead]').forEach(h=>{
+    const c=h.dataset.cathead;
+    const vis=[...document.querySelectorAll('.term[data-cat="'+c+'"]')].some(t=>!t.classList.contains('hidden'));
+    h.classList.toggle('hidden',!vis);
+  });
+  document.getElementById('noresults').classList.toggle('hidden',any);
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"DefinedTermSet",
+  "name":"Regulatory Reporting & AI Glossary",
+  "url":"https://your-ai-controller.com/glossary/",
+  "description":"Plain-English definitions of regulatory-reporting, AI, and controls terms relevant to using AI in regulatory reporting.",
+  "publisher":{"@type":"Organization","name":"Your AI Controller","url":"https://your-ai-controller.com/"}
+}
+</script>
+</body>
+</html>
