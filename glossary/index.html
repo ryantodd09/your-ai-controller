@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Regulatory Reporting &amp; AI Glossary (free) | Your AI Controller</title>
-<meta name="description" content="Plain-English definitions of the regulatory reporting, AI, and controls terms that matter when you bring AI into regulatory reporting and accounting. Free, by a current practitioner.">
+<meta name="description" content="Plain-English definitions of the major U.S. bank regulatory reports (FFIEC 009, Call Report, FR Y-9C, FR Y-14, FR Y-15, FFIEC 101, FR 2052a, FR 2510, FR 2590, TIC) plus the AI and controls terms that matter when you bring AI into regulatory reporting. Sourced to FFIEC/FRB/Treasury.">
 <link rel="canonical" href="https://your-ai-controller.com/glossary/">
 
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -15,12 +15,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Your AI Controller">
 <meta property="og:title" content="Regulatory Reporting & AI Glossary - free, plain-English">
-<meta property="og:description" content="Plain-English definitions of the regulatory reporting, AI, and controls terms that matter when you bring AI into regulatory reporting.">
+<meta property="og:description" content="Plain-English definitions of the major U.S. bank regulatory reports plus the AI and controls terms that matter. Sourced to FFIEC/FRB/Treasury.">
 <meta property="og:url" content="https://your-ai-controller.com/glossary/">
 <meta property="og:image" content="https://your-ai-controller.com/og-1200x630.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Regulatory Reporting & AI Glossary">
-<meta name="twitter:description" content="Plain-English definitions of the regulatory reporting, AI, and controls terms that matter.">
+<meta name="twitter:description" content="Plain-English definitions of the major U.S. bank regulatory reports plus AI and controls terms.">
 <meta name="twitter:image" content="https://your-ai-controller.com/og-1200x630.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +51,7 @@
 
   .hero{padding:64px 0 22px;text-align:center;background:radial-gradient(1000px 420px at 50% -10%,#eef4fc 0%,rgba(238,244,252,0) 70%)}
   .hero h1{font-size:42px;line-height:1.1;margin:14px auto 0;max-width:20ch}
-  .hero p.lead{font-size:18px;color:var(--muted);max-width:62ch;margin:16px auto 0}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:64ch;margin:16px auto 0}
   @media(max-width:680px){.hero h1{font-size:32px}}
 
   .controls{max-width:760px;margin:28px auto 0}
@@ -66,6 +66,7 @@
   .term h3{font-size:18px;margin:0 0 6px}
   .term .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
   .term p{margin:0;color:var(--muted);font-size:15.5px}
+  .term .src{display:inline-block;margin-top:8px;font-size:13px;font-weight:600}
 
   .cta-band{background:linear-gradient(180deg,#13294b,#0f1f3d);color:#fff;text-align:center;padding:54px 0;border-radius:18px;margin-top:34px}
   .cta-band h2{color:#fff;font-size:26px;max-width:26ch;margin:0 auto;text-wrap:balance}
@@ -94,12 +95,13 @@
   <div class="wrap">
     <p class="eyebrow">Free reference</p>
     <h1>Regulatory reporting &amp; AI glossary</h1>
-    <p class="lead">Plain-English definitions of the regulatory reporting, AI, and controls terms that come up when you bring AI into the reporting process. Written by a current practitioner.</p>
+    <p class="lead">Plain-English definitions of the major U.S. bank regulatory reports, plus the AI and controls terms that come up when you bring AI into the reporting process. Each report links to its authoritative FFIEC, Federal Reserve, or Treasury source. Written by a current practitioner.</p>
     <div class="controls">
-      <input id="q" type="text" placeholder="Search terms (e.g. hallucination, walkthrough, FR 2052a)…" oninput="filterTerms()">
+      <input id="q" type="text" placeholder="Search (e.g. Call Report, FR 2052a, reconciliation)…" oninput="filterTerms()">
       <div class="filters" id="chips">
         <button class="chip active" data-cat="all" onclick="setCat(this)">All</button>
-        <button class="chip" data-cat="reg" onclick="setCat(this)">Regulatory reporting</button>
+        <button class="chip" data-cat="reports" onclick="setCat(this)">Regulatory reports</button>
+        <button class="chip" data-cat="concepts" onclick="setCat(this)">Reporting concepts</button>
         <button class="chip" data-cat="ai" onclick="setCat(this)">AI</button>
         <button class="chip" data-cat="controls" onclick="setCat(this)">Controls &amp; governance</button>
       </div>
@@ -110,17 +112,25 @@
 <main>
   <div class="wrap" id="glossary">
 
-    <div class="cat" data-cathead="reg">Regulatory reporting</div>
-    <div class="term" data-cat="reg" id="ffiec-009"><h3>FFIEC 009<span class="tag">Reg</span></h3><p>The Country Exposure Report - a quarterly filing where larger U.S. banking organizations detail their exposures to foreign countries, so regulators can monitor cross-border and country risk. Known for how granular and adjustment-heavy the exposure classification gets.</p></div>
-    <div class="term" data-cat="reg" id="call-report"><h3>Call Report<span class="tag">Reg</span></h3><p>The Consolidated Reports of Condition and Income (FFIEC 031/041/051) that every U.S. bank files quarterly - a detailed balance sheet, income statement, and supporting schedules.</p></div>
-    <div class="term" data-cat="reg" id="fr-y-9c"><h3>FR Y-9C<span class="tag">Reg</span></h3><p>The quarterly consolidated financial statements that bank holding companies (and similar institutions) file with the Federal Reserve.</p></div>
-    <div class="term" data-cat="reg" id="fr-2052a"><h3>FR 2052a<span class="tag">Reg</span></h3><p>The Complex Institution Liquidity Monitoring Report - granular liquidity data that large banks file to support liquidity ratios (LCR/NSFR) and ongoing monitoring.</p></div>
-    <div class="term" data-cat="reg" id="schedule-line-item"><h3>Schedule / line item<span class="tag">Reg</span></h3><p>A "schedule" is a section of a report covering one topic (loans, deposits, derivatives); a "line item" is a specific reportable value within it, defined by the instructions.</p></div>
-    <div class="term" data-cat="reg" id="reporting-instructions"><h3>Reporting instructions<span class="tag">Reg</span></h3><p>The official, public guidance (FFIEC, Federal Reserve, OCC, FDIC, SEC) that defines exactly what each line item must include, exclude, and how to classify items. The source of truth - and what every AI answer should be checked against.</p></div>
-    <div class="term" data-cat="reg" id="edit-checks"><h3>Edit checks / validations<span class="tag">Reg</span></h3><p>Built-in rules a report must pass before submission - internal-consistency and cross-schedule checks that flag likely errors.</p></div>
-    <div class="term" data-cat="reg" id="interseries-reconciliation"><h3>Interseries reconciliation<span class="tag">Reg</span></h3><p>Tying values across different reports or schedules that should agree (a total on one report matching the same concept on another). A core reporting control - and a natural fit for AI-assisted cross-checking.</p></div>
-    <div class="term" data-cat="reg" id="attestation"><h3>Attestation / sign-off<span class="tag">Reg</span></h3><p>The formal certification by a responsible officer that a report is accurate and complete. AI can prepare and check; a person still signs.</p></div>
-    <div class="term" data-cat="reg" id="materiality"><h3>Materiality threshold<span class="tag">Reg</span></h3><p>A defined level below which an error or item isn't significant enough to correct or report separately. Set by policy and judgment, not the tool.</p></div>
+    <div class="cat" data-cathead="reports">U.S. bank regulatory reports</div>
+    <div class="term" data-cat="reports" id="call-report"><h3>Call Report (FFIEC 031 / 041 / 051)<span class="tag">Report</span></h3><p>The Consolidated Reports of Condition and Income that every U.S. bank files quarterly - a detailed balance sheet, income statement, and supporting schedules. FFIEC 031 is for banks with domestic <em>and</em> foreign offices; 041 and 051 are for domestic-only banks (051 is the streamlined version for smaller institutions).</p><a class="src" href="https://www.ffiec.gov/resources/reporting-forms/ffiec031" target="_blank" rel="noopener">Official source (FFIEC) ↗</a></div>
+    <div class="term" data-cat="reports" id="fr-y-9c"><h3>FR Y-9C<span class="tag">Report</span></h3><p>The Consolidated Financial Statements for Holding Companies - quarterly consolidated financials that bank and savings-and-loan holding companies (and U.S. IHCs of foreign banks) file with the Federal Reserve. It mirrors the Call Report but at the holding-company level rather than the bank level.</p><a class="src" href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-9C" target="_blank" rel="noopener">Official source (FRB) ↗</a></div>
+    <div class="term" data-cat="reports" id="fr-y-14"><h3>FR Y-14 (A / Q / M)<span class="tag">Report</span></h3><p>Capital Assessments and Stress Testing - granular (often loan-, security-, and counterparty-level) data filed by holding companies and IHCs with $100B+ in assets to support CCAR/DFAST stress testing. Three frequencies: annual (with firm projections), quarterly (granular as-of data), and monthly (retail loan-level). It must reconcile to the FR Y-9C - it doesn't replace it.</p><a class="src" href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-14A" target="_blank" rel="noopener">Official source (FRB) ↗</a></div>
+    <div class="term" data-cat="reports" id="ffiec-009"><h3>FFIEC 009 - Country Exposure Report<span class="tag">Report</span></h3><p>A quarterly Federal Reserve report (filed via FRB New York) where U.S. banking organizations report their claims on residents of every country - including the U.S. home country - by counterparty sector and maturity, on both an immediate-counterparty and a guarantor (ultimate-risk) basis. A companion FFIEC 009a captures material foreign-country concentrations only.</p><a class="src" href="https://www.ffiec.gov/resources/reporting-forms/ffiec009" target="_blank" rel="noopener">Official source (FFIEC) ↗</a></div>
+    <div class="term" data-cat="reports" id="fr-2510"><h3>FR 2510 - Institution-to-Aggregate (I-A) Granular Data<span class="tag">Report</span></h3><p>A quarterly report filed only by U.S. G-SIBs, on the same consolidation basis as the FR Y-9C, capturing a full balance sheet (assets <em>and</em> liabilities) broken out by instrument, currency, remaining maturity, and counterparty country/sector - including the home country. It implements the Financial Stability Board's common data template.</p><a class="src" href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2510" target="_blank" rel="noopener">Official source (FRB) ↗</a></div>
+    <div class="term" data-cat="reports" id="fr-2590"><h3>FR 2590 - Single-Counterparty Credit Limits (SCCL)<span class="tag">Report</span></h3><p>A quarterly report where Category I/II/III firms (and certain FBOs/IHCs) report their top 50 counterparties by net credit exposure, under the single-counterparty credit-limit rules (Regulation YY, 12 CFR Part 252 Subpart H). It measures the firm's exposure <em>to</em> counterparties - it is not a balance sheet, so issuing a security isn't reported, but a liquidity facility to your own conduit is.</p><a class="src" href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2590" target="_blank" rel="noopener">Official source (FRB) ↗</a></div>
+    <div class="term" data-cat="reports" id="fr-y-15"><h3>FR Y-15 - Banking Organization Systemic Risk Report<span class="tag">Report</span></h3><p>A quarterly report where $100B+ organizations (and every U.S. G-SIB) report the six systemic-footprint components - size, interconnectedness, substitutability, complexity, cross-jurisdictional activity, and short-term wholesale funding. These indicators drive the G-SIB capital surcharge. Most cells are bespoke defined measures, not GAAP balance-sheet pulls.</p><a class="src" href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-15" target="_blank" rel="noopener">Official source (FRB) ↗</a></div>
+    <div class="term" data-cat="reports" id="tic-forms"><h3>TIC forms - Treasury International Capital<span class="tag">Report</span></h3><p>A family of U.S. Treasury reports (filed with FRB New York as fiscal agent) capturing cross-border holdings of, and transactions in, securities and banking claims/liabilities between U.S. and foreign residents. Includes the B-forms (banking claims/liabilities), SLT, SHC/SHCA and SHL/SHLA (securities), Form D (derivatives), and the TFC foreign-currency forms. "Resident" means location, not nationality.</p><a class="src" href="https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions" target="_blank" rel="noopener">Official source (U.S. Treasury) ↗</a></div>
+    <div class="term" data-cat="reports" id="ffiec-101"><h3>FFIEC 101 - Advanced Approaches Capital<span class="tag">Report</span></h3><p>A quarterly report where advanced-approaches banks (generally Category I/II) report regulatory capital and advanced-approaches risk-weighted assets - reconciled to the standardized framework. Firms report the more conservative "lower of" advanced vs. standardized ratio (the Collins floor), so it's an overlay on the primary capital schedules (FR Y-9C HC-R / Call RC-R), not a replacement.</p><a class="src" href="https://www.ffiec.gov/resources/reporting-forms/ffiec101" target="_blank" rel="noopener">Official source (FFIEC) ↗</a></div>
+    <div class="term" data-cat="reports" id="fr-2052a"><h3>FR 2052a - Liquidity Monitoring Report<span class="tag">Report</span></h3><p>The Complex Institution Liquidity Monitoring Report - granular liquidity data large banks file (the largest daily, others monthly) capturing cash flows by product, counterparty, and maturity. It supports the LCR/NSFR and the Fed's ongoing liquidity monitoring. Maturity uses the earliest contractual exercise date (unlike other reports).</p><a class="src" href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2052a" target="_blank" rel="noopener">Official source (FRB) ↗</a></div>
+
+    <div class="cat" data-cathead="concepts">Reporting concepts</div>
+    <div class="term" data-cat="concepts" id="schedule-line-item"><h3>Schedule / line item<span class="tag">Concept</span></h3><p>A "schedule" is a section of a report covering one topic (loans, deposits, derivatives); a "line item" is a specific reportable value within it, defined by the instructions. A single product can hit multiple schedules, parts, sub-schedules, and memoranda lines.</p></div>
+    <div class="term" data-cat="concepts" id="reporting-instructions"><h3>Reporting instructions<span class="tag">Concept</span></h3><p>The official, public guidance (FFIEC, Federal Reserve, OCC, FDIC, SEC) that defines exactly what each line item must include, exclude, and how to classify items. The instructions are the primary authority - the source of truth, and what every AI answer should be checked against.</p></div>
+    <div class="term" data-cat="concepts" id="edit-checks"><h3>Edit checks / validations<span class="tag">Concept</span></h3><p>Built-in rules a report must pass before submission - internal-consistency and cross-schedule checks that flag likely errors.</p></div>
+    <div class="term" data-cat="concepts" id="interseries-reconciliation"><h3>Interseries reconciliation<span class="tag">Concept</span></h3><p>Tying values across different reports or schedules that should agree (e.g., FR 2510 reconciling to FR Y-9C; FFIEC 101 to Call RC-R; FR Y-15 Schedule E to FFIEC 009). A core reporting control - and a natural fit for AI-assisted cross-checking.</p></div>
+    <div class="term" data-cat="concepts" id="attestation"><h3>Attestation / sign-off<span class="tag">Concept</span></h3><p>The formal certification by a responsible officer that a report is accurate and complete. AI can prepare and check; a person still signs.</p></div>
+    <div class="term" data-cat="concepts" id="materiality"><h3>Materiality / reporting threshold<span class="tag">Concept</span></h3><p>A defined level below which an item isn't significant enough to report or correct. Many reports also have panel/scope thresholds that decide whether you file at all (e.g., FR 2510 = U.S. G-SIBs; FR Y-14/Y-15 = $100B+).</p></div>
 
     <div class="cat" data-cathead="ai">AI</div>
     <div class="term" data-cat="ai" id="llm"><h3>LLM (Large Language Model)<span class="tag">AI</span></h3><p>An AI model trained on vast amounts of text that predicts and generates language - the engine behind tools like ChatGPT, Claude, and Microsoft Copilot.</p></div>
@@ -155,7 +165,7 @@
 <footer>
   <div class="wrap">
     <div class="foot-brand"><img src="/emblem.png" alt=""> Your AI Controller</div>
-    <p>Educational only; not official guidance or the views of any employer. Always verify against primary-source instructions.</p>
+    <p>Educational only; not official guidance or the views of any employer. Report definitions link to the authoritative FFIEC/FRB/Treasury source - always verify against the current primary-source instructions.</p>
     <p>&copy; 2026 Your AI Controller · <a href="/">Home</a> · <a href="/tools/">Tools</a></p>
   </div>
 </footer>
@@ -184,7 +194,7 @@ function filterTerms(){
   "@context":"https://schema.org","@type":"DefinedTermSet",
   "name":"Regulatory Reporting & AI Glossary",
   "url":"https://your-ai-controller.com/glossary/",
-  "description":"Plain-English definitions of regulatory reporting, AI, and controls terms relevant to using AI in regulatory reporting.",
+  "description":"Plain-English definitions of the major U.S. bank regulatory reports plus AI and controls terms relevant to using AI in regulatory reporting.",
   "publisher":{"@type":"Organization","name":"Your AI Controller","url":"https://your-ai-controller.com/"}
 }
 </script>
