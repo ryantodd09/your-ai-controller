@@ -23,22 +23,27 @@ const PROCESS = 20;           // newest candidates to attribute (bounds full-tex
 
 // Every tracked report, with the exact-phrase terms used to find its activity
 // and the issuing agency (for the API filter + display).
+// `omb` = OMB control number(s). PRA notices frequently bundle many collections
+// under a generic title ("Proposed Agency Information Collection Activities") and
+// reference the report only by its OMB number, never its name - so name-matching
+// misses them. We also query + attribute by OMB number (a unique, high-precision
+// key). Numbers left [] are unverified; those reports rely on name-matching.
 const REPORTS = [
-  { label: "Call Report (FFIEC 031/041)", terms: ["FFIEC 031", "FFIEC 041"], agencies: [] },
-  { label: "FR Y-9C", terms: ["FR Y-9C"], agencies: ["federal-reserve-system"] },
-  { label: "FR Y-14", terms: ["FR Y-14"], agencies: ["federal-reserve-system"] },
-  { label: "FR Y-15", terms: ["FR Y-15"], agencies: ["federal-reserve-system"] },
-  { label: "FFIEC 009", terms: ["FFIEC 009"], agencies: [] },
-  { label: "FFIEC 101", terms: ["FFIEC 101"], agencies: [] },
-  { label: "FR 2052a", terms: ["FR 2052a"], agencies: ["federal-reserve-system"] },
-  { label: "FR 2510", terms: ["FR 2510"], agencies: ["federal-reserve-system"] },
-  { label: "FR 2590", terms: ["FR 2590"], agencies: ["federal-reserve-system"] },
-  { label: "TIC B Forms", terms: ["TIC BC", "TIC BL", "TIC BQ"], agencies: ["treasury-department"] },
-  { label: "TIC SLT", terms: ["TIC SLT"], agencies: ["treasury-department"] },
-  { label: "TIC SHC/SHCA", terms: ["TIC SHC", "TIC SHCA"], agencies: ["treasury-department"] },
-  { label: "TIC SHL/SHLA", terms: ["TIC SHL", "TIC SHLA"], agencies: ["treasury-department"] },
-  { label: "TIC Form D", terms: ["TIC Form D"], agencies: ["treasury-department"] },
-  { label: "TIC TFC", terms: ["TFC-1", "Treasury Foreign Currency"], agencies: ["treasury-department"] },
+  { label: "Call Report (FFIEC 031/041)", terms: ["FFIEC 031", "FFIEC 041"], agencies: [], omb: ["7100-0036", "1557-0081", "3064-0052"] },
+  { label: "FR Y-9C", terms: ["FR Y-9C"], agencies: ["federal-reserve-system"], omb: ["7100-0128"] },
+  { label: "FR Y-14", terms: ["FR Y-14"], agencies: ["federal-reserve-system"], omb: ["7100-0341"] },
+  { label: "FR Y-15", terms: ["FR Y-15"], agencies: ["federal-reserve-system"], omb: ["7100-0352"] },
+  { label: "FFIEC 009", terms: ["FFIEC 009"], agencies: [], omb: ["7100-0035"] },
+  { label: "FFIEC 101", terms: ["FFIEC 101"], agencies: [], omb: [] },
+  { label: "FR 2052a", terms: ["FR 2052a"], agencies: ["federal-reserve-system"], omb: [] },
+  { label: "FR 2510", terms: ["FR 2510"], agencies: ["federal-reserve-system"], omb: [] },
+  { label: "FR 2590", terms: ["FR 2590"], agencies: ["federal-reserve-system"], omb: [] },
+  { label: "TIC B Forms", terms: ["TIC BC", "TIC BL", "TIC BQ"], agencies: ["treasury-department"], omb: ["1505-0017"] },
+  { label: "TIC SLT", terms: ["TIC SLT"], agencies: ["treasury-department"], omb: ["1505-0235"] },
+  { label: "TIC SHC/SHCA", terms: ["TIC SHC", "TIC SHCA"], agencies: ["treasury-department"], omb: [] },
+  { label: "TIC SHL/SHLA", terms: ["TIC SHL", "TIC SHLA"], agencies: ["treasury-department"], omb: [] },
+  { label: "TIC Form D", terms: ["TIC Form D"], agencies: ["treasury-department"], omb: [] },
+  { label: "TIC TFC", terms: ["TFC-1", "Treasury Foreign Currency"], agencies: ["treasury-department"], omb: ["1505-0010"] },
 ];
 
 const TYPES = ["RULE", "PRORULE", "NOTICE"];
@@ -96,15 +101,23 @@ function attribute(doc, fullText) {
   // are short and deliberate, so >=1 is enough.
   const isRule = /rule/.test((doc.type || "").toLowerCase());
   const min = usingFull && isRule ? 2 : 1;
-  return REPORTS.filter((r) => r.terms.some((t) => occurrences(hay, t.toLowerCase()) >= min)).map((r) => r.label);
+  // Attribute by name (with the rule threshold) OR by OMB control number (a
+  // unique key - one mention is definitive, no threshold).
+  return REPORTS.filter((r) =>
+    r.terms.some((t) => occurrences(hay, t.toLowerCase()) >= min) ||
+    (r.omb || []).some((o) => hay.includes(o.toLowerCase()))
+  ).map((r) => r.label);
 }
 
 // 1. gather unique relevant candidates across all reports
 const cand = new Map();   // document_number -> doc
 for (const rep of REPORTS) {
-  for (const term of rep.terms) {
+  // query by report identifier (agency-scoped) and by OMB number (any agency -
+  // bundled PRA notices may be filed by OCC/FDIC/Treasury, not just the Fed)
+  const queries = [...rep.terms.map((t) => [t, rep.agencies]), ...(rep.omb || []).map((o) => [o, []])];
+  for (const [term, ag] of queries) {
     let results;
-    try { results = await queryTerm(term, rep.agencies); }
+    try { results = await queryTerm(term, ag); }
     catch (e) { console.error(`  ! ${e.message}`); continue; }
     for (const doc of results) if (isRelevant(doc)) cand.set(doc.document_number, doc);
   }
