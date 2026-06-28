@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulatory Reporting Instruction Tracker - current versions &amp; changes | Your AI Controller</title>
+<meta name="description" content="Current instruction versions for the major U.S. bank regulatory reports - Call Report (FFIEC 031/041), FR Y-9C, FR Y-14, FR Y-15, FFIEC 009, FR 2510, FR 2590, FFIEC 101, FR 2052a, and the TIC forms - monitored for changes via the Federal Register and direct instruction-file checks. Each links to its authoritative FFIEC, Federal Reserve, or Treasury source.">
+<link rel="canonical" href="https://your-ai-controller.com/instruction-tracker/">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0f1f3d">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Your AI Controller">
+<meta property="og:title" content="Regulatory Reporting Instruction Tracker - current versions & changes">
+<meta property="og:description" content="Current instruction versions for the major U.S. bank regulatory reports, monitored for changes. Sourced to FFIEC/FRB/Treasury.">
+<meta property="og:url" content="https://your-ai-controller.com/instruction-tracker/">
+<meta property="og:image" content="https://your-ai-controller.com/og-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Regulatory Reporting Instruction Tracker">
+<meta name="twitter:description" content="Current instruction versions for the major U.S. bank regulatory reports, monitored for changes.">
+<meta name="twitter:image" content="https://your-ai-controller.com/og-1200x630.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{--navy:#13294b;--navy-deep:#0f1f3d;--ink:#1f2937;--muted:#5b6470;--line:#e6e9ef;--bg:#fff;
+    --soft:#f6f8fc;--accent:#2b6cb0;--accent-dk:#235a93;--accent-soft:#eaf2fb;--radius:14px;--maxw:980px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-dk)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--navy);font-weight:800;letter-spacing:-.02em;margin:0}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy)}
+  .brand img{width:32px;height:32px;border-radius:50%}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links a{color:var(--ink);font-weight:500;font-size:15px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:15px;cursor:pointer;border:0}
+  .btn:hover{background:var(--accent-dk);color:#fff}
+  .nav-cta{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:linear-gradient(135deg,#3a86d4,#2b6cb0);box-shadow:0 4px 14px rgba(43,108,176,.30);transition:transform .15s,box-shadow .15s,background .15s}
+  .nav-cta:hover{background:linear-gradient(135deg,#4a92dd,#2f74bd);transform:translateY(-1px);box-shadow:0 8px 22px rgba(43,108,176,.45);color:#fff}
+  .nav-cta .arr{transition:transform .15s}.nav-cta:hover .arr{transform:translateX(3px)}
+  @media(max-width:680px){.nav-links a:not(.btn){display:none}}
+
+  .hero{padding:64px 0 22px;text-align:center;background:radial-gradient(1000px 420px at 50% -10%,#eef4fc 0%,rgba(238,244,252,0) 70%)}
+  .hero h1{font-size:42px;line-height:1.1;margin:14px auto 0;max-width:22ch}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:64ch;margin:16px auto 0}
+  .updated{font-size:13px;color:var(--muted);margin:16px 0 0}
+  .updated b{color:var(--navy)}
+  @media(max-width:680px){.hero h1{font-size:32px}}
+
+  main{padding:30px 0 60px}
+  .sec-head{margin:40px 0 12px}
+  .sec-head h2{font-size:24px}
+  .sec-head p{color:var(--muted);font-size:15.5px;margin:6px 0 0;max-width:70ch}
+
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+  table{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}
+  thead th{text-align:left;background:var(--soft);color:var(--navy);font-weight:700;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;padding:12px 16px;border-bottom:1px solid var(--line)}
+  tbody td{padding:13px 16px;border-bottom:1px solid #f2f4f8;vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:#fafcff}
+  .rep{font-weight:700;color:var(--navy)}
+  .rep .full{display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:2px}
+  .ver{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .ag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:6px}
+  td.src a{font-weight:600;font-size:13.5px;white-space:nowrap}
+
+  .how{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;margin-top:14px}
+  .how ul{margin:10px 0 0;padding-left:18px}
+  .how li{margin:8px 0;color:var(--ink)}
+  .how li b{color:var(--navy)}
+  .how .note{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+
+  .feed{margin-top:14px}
+  .item{display:flex;gap:16px;padding:16px 4px;border-bottom:1px solid #f2f4f8}
+  .item .date{flex:0 0 96px;color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums;padding-top:2px}
+  .item .body h3{font-size:16.5px;margin:0}
+  .item .body .meta{font-size:13px;color:var(--muted);margin:3px 0 0}
+  .item .body p{margin:7px 0 0;color:var(--ink);font-size:15px}
+  .item .body .src{display:inline-block;margin-top:7px;font-size:13px;font-weight:600}
+  .pill{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--accent);padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+
+  .cta-band{background:linear-gradient(180deg,#13294b,#0f1f3d);color:#fff;text-align:center;padding:54px 0;border-radius:18px;margin-top:44px}
+  .cta-band h2{color:#fff;font-size:26px;max-width:30ch;margin:0 auto;text-wrap:balance}
+  .cta-band p{color:#b9c8de;font-size:16px;margin:12px auto 20px;max-width:54ch}
+  footer{background:var(--navy-deep);color:#8da3c4;padding:38px 0;font-size:14px;margin-top:56px}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;margin-bottom:12px}
+  .foot-brand img{width:30px;height:30px;border-radius:50%}
+  footer a{color:#a9bcd6}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/"><img src="/emblem.png" alt=""> Your AI Controller</a>
+    <div class="nav-links">
+      <a href="/tools/">Tools</a>
+      <a href="/glossary/">Glossary</a>
+      <a class="btn nav-cta" href="/#subscribe">Subscribe <span class="arr">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Free reference</p>
+    <h1>Regulatory reporting instruction tracker</h1>
+    <p class="lead">The current instruction version for each major U.S. bank regulatory report, in one place - and a running log of the rule changes and Paperwork-Reduction-Act notices that signal an update is coming. Each report links to its authoritative FFIEC, Federal Reserve, or Treasury source.</p>
+    <p class="updated">Last reviewed <b>June 28, 2026</b> · monitored weekly</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="sec-head">
+      <h2>Current instruction versions</h2>
+      <p>The instruction edition we treat as current for each report, with a direct link to the official source. Always confirm against the primary-source instructions before you rely on a treatment.</p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Report</th><th>Current instructions</th><th>Issuer</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="rep">Call Report<span class="full">FFIEC 031 / 041 - Consolidated Reports of Condition and Income</span></td><td class="ver">March 2025</td><td><span class="ag">FFIEC</span></td><td class="src"><a href="https://www.ffiec.gov/resources/reporting-forms/ffiec031" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FR Y-9C<span class="full">Consolidated Financial Statements for Holding Companies</span></td><td class="ver">December 2025</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-9C" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FR Y-14 (A / Q / M)<span class="full">Capital Assessments and Stress Testing</span></td><td class="ver">December 2025</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-14A" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FR Y-15<span class="full">Banking Organization Systemic Risk Report</span></td><td class="ver">January 2026 (as-of 12/31/2025)</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-15" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FFIEC 009<span class="full">Country Exposure Report</span></td><td class="ver">December 2022</td><td><span class="ag">FFIEC</span></td><td class="src"><a href="https://www.ffiec.gov/resources/reporting-forms/ffiec009" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FR 2510<span class="full">Institution-to-Aggregate (I-A) Granular Data</span></td><td class="ver">Current (updated Jun 2025)</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2510" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FR 2590<span class="full">Single-Counterparty Credit Limits (SCCL)</span></td><td class="ver">Current (updated Oct 2024)</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2590" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FFIEC 101<span class="full">Advanced Approaches Regulatory Capital</span></td><td class="ver">March 2024</td><td><span class="ag">FFIEC</span></td><td class="src"><a href="https://www.ffiec.gov/resources/reporting-forms/ffiec101" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">FR 2052a<span class="full">Complex Institution Liquidity Monitoring Report</span></td><td class="ver">Current (index updated Feb 2025)</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_2052a" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">TIC B Forms<span class="full">Banking claims &amp; liabilities (BC, BL, BQ)</span></td><td class="ver">November 2022</td><td><span class="ag">U.S. Treasury</span></td><td class="src"><a href="https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">TIC SLT<span class="full">Aggregate Holdings of Long-Term Securities</span></td><td class="ver">February 2022</td><td><span class="ag">U.S. Treasury</span></td><td class="src"><a href="https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">TIC SHC / SHCA<span class="full">U.S. Ownership of Foreign Securities</span></td><td class="ver">2025</td><td><span class="ag">U.S. Treasury</span></td><td class="src"><a href="https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">TIC SHL / SHLA<span class="full">Foreign Holdings of U.S. Securities</span></td><td class="ver">2025</td><td><span class="ag">U.S. Treasury</span></td><td class="src"><a href="https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">TIC D<span class="full">Holdings of, and Transactions in, Financial Derivatives</span></td><td class="ver">September 2018</td><td><span class="ag">U.S. Treasury</span></td><td class="src"><a href="https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">TIC TFC<span class="full">Treasury Foreign Currency forms (FC-1/2/3)</span></td><td class="ver">Current</td><td><span class="ag">U.S. Treasury</span></td><td class="src"><a href="https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions" target="_blank" rel="noopener">Official ↗</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-head">
+      <h2>How we monitor for changes</h2>
+    </div>
+    <div class="how">
+      <p>Reporting instructions change quietly, and a missed update is a reporting error waiting to happen. We watch each report two ways:</p>
+      <ul>
+        <li><b>Early signal - the Federal Register.</b> Proposed and final rules, and Paperwork-Reduction-Act information-collection notices, usually appear weeks before the instruction PDF itself changes. We scan for them weekly, per report.</li>
+        <li><b>Confirmation - the instruction file itself.</b> We compare the current instruction document against a stored fingerprint, so an actual revision is caught, not just talked about.</li>
+      </ul>
+      <p class="note">A practitioner reviews every signal before it's called a change - the same control mindset we write about. This page is an educational reference, not official guidance; always verify against the primary-source instructions.</p>
+    </div>
+
+    <div class="sec-head">
+      <h2>Recent regulatory activity</h2>
+      <p>Rule changes and information-collection notices we have flagged that touch these reports. A notice here means a change is proposed or under review - not that the instructions have already changed.</p>
+    </div>
+    <div class="feed">
+      <div class="item">
+        <div class="date">Mar 27, 2026</div>
+        <div class="body">
+          <h3>GSIB surcharge rule would amend the FR Y-15 form<span class="pill">Proposed Rule</span></h3>
+          <div class="meta">Federal Reserve · Regulation Q · affects FR Y-15</div>
+          <p>A proposed rule to revise the GSIB risk-based capital surcharge framework also proposes several amendments to the FR Y-15 - the source report for the surcharge inputs - to improve data-reporting consistency and streamline the reporting process.</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2026/03/27/2026-05961/regulatory-capital-rule-regulation-q-risk-based-capital-surcharges-for-global-systemically-important" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">Aug 21, 2025</div>
+        <div class="body">
+          <h3>FFIEC 009 information collection - comment request<span class="pill">PRA Notice</span></h3>
+          <div class="meta">Federal Reserve · affects FFIEC 009</div>
+          <p>A Paperwork-Reduction-Act notice inviting comment on the FFIEC 009 / 009a information collection - the kind of notice that precedes an instructions revision.</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2025/08/21/2025-15952/proposed-agency-information-collection-activities-comment-request" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">May 9, 2025</div>
+        <div class="body">
+          <h3>FFIEC 009 information collection - comment request<span class="pill">PRA Notice</span></h3>
+          <div class="meta">Federal Reserve · affects FFIEC 009</div>
+          <p>An earlier Paperwork-Reduction-Act comment request covering the FFIEC 009 Country Exposure Report collection.</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2025/05/09/2025-08159/proposed-agency-information-collection-activities-comment-request" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">Jan 28, 2025</div>
+        <div class="body">
+          <h3>TIC SHC / SHCA submitted to OMB for review<span class="pill">PRA Notice</span></h3>
+          <div class="meta">U.S. Treasury · affects TIC SHC / SHCA</div>
+          <p>A notice that the Treasury International Capital SHC/SHCA information collection was submitted to OMB for review and clearance, with public comment invited.</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2025/01/28/2025-01837/agency-information-collection-activities-submission-for-omb-review-comment-request-multiple" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h2>Never miss an instruction change.</h2>
+      <p>Subscribe free for a practical, control-aware take on AI in regulatory reporting - and a heads-up when the instructions move.</p>
+      <a class="btn nav-cta" href="/#subscribe">Subscribe free <span class="arr">→</span></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand"><img src="/emblem.png" alt=""> Your AI Controller</div>
+    <p>Educational only; not official guidance or the views of any employer. Version labels and activity are compiled from public FFIEC, Federal Reserve, and U.S. Treasury sources - always verify against the current primary-source instructions before relying on a treatment.</p>
+    <p>&copy; 2026 Your AI Controller · <a href="/">Home</a> · <a href="/tools/">Tools</a> · <a href="/glossary/">Glossary</a></p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Dataset",
+  "name":"U.S. Bank Regulatory Reporting Instruction Tracker",
+  "url":"https://your-ai-controller.com/instruction-tracker/",
+  "description":"Current instruction versions for the major U.S. bank regulatory reports (Call Report, FR Y-9C, FR Y-14, FR Y-15, FFIEC 009, FR 2510, FR 2590, FFIEC 101, FR 2052a, TIC forms), monitored for changes via the Federal Register and direct instruction-file checks.",
+  "creator":{"@type":"Organization","name":"Your AI Controller","url":"https://your-ai-controller.com/"},
+  "isAccessibleForFree":true
+}
+</script>
+</body>
+</html>
