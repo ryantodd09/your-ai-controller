@@ -88,6 +88,18 @@
   .item .body .src{display:inline-block;margin-top:7px;font-size:13px;font-weight:600}
   .pill{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--accent);padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
 
+  .soon{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9a6a00;background:#fff4d6;padding:2px 9px;border-radius:999px;margin-left:8px;vertical-align:middle}
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+  @media(max-width:680px){.plans{grid-template-columns:1fr}}
+  .plan{border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 26px;background:#fff}
+  .plan.pro{border-color:var(--accent);box-shadow:0 8px 24px rgba(43,108,176,.12);background:linear-gradient(180deg,#fbfdff,#fff)}
+  .plan-h{font-size:18px;font-weight:800;color:var(--navy)}
+  .plan .price{font-size:28px;font-weight:800;color:var(--navy);margin:6px 0 12px;letter-spacing:-.02em}
+  .plan .price.tbd{font-size:16px;font-weight:600;color:var(--muted)}
+  .plan ul{margin:0 0 16px;padding-left:18px}
+  .plan li{margin:7px 0;color:var(--ink);font-size:15px}
+  .plan .plan-note{font-size:13px;color:var(--muted)}
+
   .cta-band{background:linear-gradient(180deg,#13294b,#0f1f3d);color:#fff;text-align:center;padding:54px 0;border-radius:18px;margin-top:44px}
   .cta-band h2{color:#fff;font-size:26px;max-width:30ch;margin:0 auto;text-wrap:balance}
   .cta-band p{color:#b9c8de;font-size:16px;margin:12px auto 20px;max-width:54ch}
@@ -133,7 +145,7 @@
           <tr><th>Report</th><th>Current instructions</th><th>Issuer</th><th>Source</th></tr>
         </thead>
         <tbody>
-          <tr><td class="rep">Call Report<span class="full">FFIEC 031 / 041 - Consolidated Reports of Condition and Income</span></td><td class="ver">March 2025</td><td><span class="ag">FFIEC</span></td><td class="src"><a href="https://www.ffiec.gov/resources/reporting-forms/ffiec031" target="_blank" rel="noopener">Official ↗</a></td></tr>
+          <tr><td class="rep">Call Report<span class="full">FFIEC 031 / 041 - Consolidated Reports of Condition and Income</span></td><td class="ver">June 2026</td><td><span class="ag">FFIEC</span></td><td class="src"><a href="https://www.ffiec.gov/resources/reporting-forms/ffiec031" target="_blank" rel="noopener">Official ↗</a></td></tr>
           <tr><td class="rep">FR Y-9C<span class="full">Consolidated Financial Statements for Holding Companies</span></td><td class="ver">December 2025</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-9C" target="_blank" rel="noopener">Official ↗</a></td></tr>
           <tr><td class="rep">FR Y-14 (A / Q / M)<span class="full">Capital Assessments and Stress Testing</span></td><td class="ver">December 2025</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-14A" target="_blank" rel="noopener">Official ↗</a></td></tr>
           <tr><td class="rep">FR Y-15<span class="full">Banking Organization Systemic Risk Report</span></td><td class="ver">January 2026 (as-of 12/31/2025)</td><td><span class="ag">Federal Reserve</span></td><td class="src"><a href="https://www.federalreserve.gov/apps/reportingforms/Report/Index/FR_Y-15" target="_blank" rel="noopener">Official ↗</a></td></tr>
@@ -169,41 +181,116 @@
       <p>Rule changes and information-collection notices we have flagged that touch these reports. A notice here means a change is proposed or under review - not that the instructions have already changed.</p>
     </div>
     <div class="feed">
+      <!-- ACTIVITY:START -->
+      <div class="item">
+        <div class="date">Jun 5, 2026</div>
+        <div class="body">
+          <h3>Agency Information Collection Activities: Information Collection Extension; Comment Request; Re…<span class="pill">PRA Notice</span></h3>
+          <div class="meta">Affects FFIEC 101</div>
+          <p>In accordance with the requirements of the Paperwork Reduction Act of 1995 (PRA), the OCC, the Board, and the FDIC (the agencies) may not conduct or sponsor, and the respondent is not required to res…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2026/06/05/2026-11344/agency-information-collection-activities-information-collection-extension-comment-request-regulatory" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">May 20, 2026</div>
+        <div class="body">
+          <h3>Agency Information Collection Activities: Announcement of Board Approval Under Delegated Author…<span class="pill">PRA Notice</span></h3>
+          <div class="meta">Affects FR Y-9C, FR Y-14</div>
+          <p>The Board of Governors of the Federal Reserve System (Board) is adopting a proposal to extend for three years, with revision, the Capital Assessments and Stress Testing Reports (FR Y14A/Q/M; OMB No.…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2026/05/20/2026-10099/agency-information-collection-activities-announcement-of-board-approval-under-delegated-authority" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">Apr 29, 2026</div>
+        <div class="body">
+          <h3>Regulatory Capital Rule: Community Bank Leverage Ratio Framework<span class="pill">Rule</span></h3>
+          <div class="meta">Affects FR Y-9C</div>
+          <p>The Office of the Comptroller of the Currency, the Board of Governors of the Federal Reserve System, and the Federal Deposit Insurance Corporation are adopting a final rule that lowers the community…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2026/04/29/2026-08298/regulatory-capital-rule-community-bank-leverage-ratio-framework" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
       <div class="item">
         <div class="date">Mar 27, 2026</div>
         <div class="body">
-          <h3>GSIB surcharge rule would amend the FR Y-15 form<span class="pill">Proposed Rule</span></h3>
-          <div class="meta">Federal Reserve · Regulation Q · affects FR Y-15</div>
-          <p>A proposed rule to revise the GSIB risk-based capital surcharge framework also proposes several amendments to the FR Y-15 - the source report for the surcharge inputs - to improve data-reporting consistency and streamline the reporting process.</p>
+          <h3>Regulatory Capital Rule (Regulation Q): Risk-Based Capital Surcharges for Global Systemically I…<span class="pill">Proposed Rule</span></h3>
+          <div class="meta">Affects FR Y-9C, FR Y-15, FFIEC 009, FR 2052a</div>
+          <p>The Board of Governors of the Federal Reserve System (Board) is inviting public comment on a notice of proposed rulemaking to amend the Board's rule that identifies and establishes risk-based capital…</p>
           <a class="src" href="https://www.federalregister.gov/documents/2026/03/27/2026-05961/regulatory-capital-rule-regulation-q-risk-based-capital-surcharges-for-global-systemically-important" target="_blank" rel="noopener">Federal Register ↗</a>
         </div>
       </div>
       <div class="item">
-        <div class="date">Aug 21, 2025</div>
+        <div class="date">Mar 27, 2026</div>
         <div class="body">
-          <h3>FFIEC 009 information collection - comment request<span class="pill">PRA Notice</span></h3>
-          <div class="meta">Federal Reserve · affects FFIEC 009</div>
-          <p>A Paperwork-Reduction-Act notice inviting comment on the FFIEC 009 / 009a information collection - the kind of notice that precedes an instructions revision.</p>
-          <a class="src" href="https://www.federalregister.gov/documents/2025/08/21/2025-15952/proposed-agency-information-collection-activities-comment-request" target="_blank" rel="noopener">Federal Register ↗</a>
+          <h3>Regulatory Capital Rule: Category I and II Banking Organizations, Banking Organizations With Si…<span class="pill">Proposed Rule</span></h3>
+          <div class="meta">Affects Call Report (FFIEC 031/041), FR Y-9C, FR Y-14, FR Y-15, +1 more</div>
+          <p>The Office of the Comptroller of the Currency, the Board of Governors of the Federal Reserve System, and the Federal Deposit Insurance Corporation are proposing to modernize the capital requirements…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2026/03/27/2026-05959/regulatory-capital-rule-category-i-and-ii-banking-organizations-banking-organizations-with" target="_blank" rel="noopener">Federal Register ↗</a>
         </div>
       </div>
       <div class="item">
-        <div class="date">May 9, 2025</div>
+        <div class="date">Mar 27, 2026</div>
         <div class="body">
-          <h3>FFIEC 009 information collection - comment request<span class="pill">PRA Notice</span></h3>
-          <div class="meta">Federal Reserve · affects FFIEC 009</div>
-          <p>An earlier Paperwork-Reduction-Act comment request covering the FFIEC 009 Country Exposure Report collection.</p>
-          <a class="src" href="https://www.federalregister.gov/documents/2025/05/09/2025-08159/proposed-agency-information-collection-activities-comment-request" target="_blank" rel="noopener">Federal Register ↗</a>
+          <h3>Regulatory Capital Rules: Regulatory Capital and Standardized Approach for Risk-Weighted Assets<span class="pill">Proposed Rule</span></h3>
+          <div class="meta">Affects Call Report (FFIEC 031/041), FR Y-9C, FR Y-14, FR Y-15, +1 more</div>
+          <p>The Office of the Comptroller of the Currency, the Board of Governors of the Federal Reserve System, and the Federal Deposit Insurance Corporation are proposing to modify certain aspects of the regul…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2026/03/27/2026-05960/regulatory-capital-rules-regulatory-capital-and-standardized-approach-for-risk-weighted-assets" target="_blank" rel="noopener">Federal Register ↗</a>
         </div>
       </div>
       <div class="item">
-        <div class="date">Jan 28, 2025</div>
+        <div class="date">Dec 11, 2025</div>
         <div class="body">
-          <h3>TIC SHC / SHCA submitted to OMB for review<span class="pill">PRA Notice</span></h3>
-          <div class="meta">U.S. Treasury · affects TIC SHC / SHCA</div>
-          <p>A notice that the Treasury International Capital SHC/SHCA information collection was submitted to OMB for review and clearance, with public comment invited.</p>
-          <a class="src" href="https://www.federalregister.gov/documents/2025/01/28/2025-01837/agency-information-collection-activities-submission-for-omb-review-comment-request-multiple" target="_blank" rel="noopener">Federal Register ↗</a>
+          <h3>Proposed Agency Information Collection Activities; Comment Request<span class="pill">PRA Notice</span></h3>
+          <div class="meta">Affects Call Report (FFIEC 031/041)</div>
+          <p>In accordance with the requirements of the Paperwork Reduction Act of 1995 (PRA), the OCC, the Board, and the FDIC (the agencies) may not conduct or sponsor, and the respondent is not required to res…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2025/12/11/2025-22481/proposed-agency-information-collection-activities-comment-request" target="_blank" rel="noopener">Federal Register ↗</a>
         </div>
+      </div>
+      <div class="item">
+        <div class="date">Dec 8, 2025</div>
+        <div class="body">
+          <h3>Agency Information Collection Activities: Announcement of Board Approval under Delegated Author…<span class="pill">PRA Notice</span></h3>
+          <div class="meta">Affects Call Report (FFIEC 031/041), FR Y-9C, FR Y-14</div>
+          <p>The Board of Governors of the Federal Reserve System (Board) is adopting a proposal to extend for three years, with revision, the Financial Statements for Holding Companies (FR Y-9; OMB No. 7100-0128…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2025/12/08/2025-22264/agency-information-collection-activities-announcement-of-board-approval-under-delegated-authority" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">Dec 1, 2025</div>
+        <div class="body">
+          <h3>Regulatory Capital Rule: Revisions to the Community Bank Leverage Ratio Framework<span class="pill">Proposed Rule</span></h3>
+          <div class="meta">Affects FR Y-9C</div>
+          <p>The Office of the Comptroller of the Currency, the Board of Governors of the Federal Reserve System, and the Federal Deposit Insurance Corporation are inviting public comment on a notice of proposed…</p>
+          <a class="src" href="https://www.federalregister.gov/documents/2025/12/01/2025-21625/regulatory-capital-rule-revisions-to-the-community-bank-leverage-ratio-framework" target="_blank" rel="noopener">Federal Register ↗</a>
+        </div>
+      </div>
+      <!-- ACTIVITY:END -->
+    </div>
+
+    <div class="sec-head">
+      <h2>Instruction-change alerts <span class="soon">Pro · coming soon</span></h2>
+      <p>The tracker above is free, and stays free. Pro adds the part that prevents a missed update: an alert the moment a report's instructions actually change - a signal for the reports you file, not a newsletter you have to read.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-h">Free</div>
+        <div class="price">$0</div>
+        <ul>
+          <li>Current instruction version for every report</li>
+          <li>Direct links to the authoritative source</li>
+          <li>Recent regulatory activity feed</li>
+        </ul>
+        <span class="plan-note">Everything on this page - what you are using now.</span>
+      </div>
+      <div class="plan pro">
+        <div class="plan-h">Pro <span class="soon">Coming soon</span></div>
+        <div class="price tbd">Pricing at launch</div>
+        <ul>
+          <li>Email the moment any report's instructions change</li>
+          <li>Per-report watchlists - track only what you file</li>
+          <li>The earliest Federal Register signals, summarized</li>
+          <li>Full change-history archive</li>
+        </ul>
+        <a class="btn nav-cta" href="/#subscribe">Join the waitlist <span class="arr">→</span></a>
       </div>
     </div>
 

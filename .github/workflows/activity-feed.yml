@@ -1,0 +1,35 @@
+name: Update instruction-tracker activity feed
+
+# Regenerates the "Recent regulatory activity" feed on /instruction-tracker/
+# from the Federal Register (all tracked reports). Runs weekly + on-demand.
+# No secrets needed - the Federal Register API is public.
+
+on:
+  schedule:
+    - cron: "20 13 * * 1" # Mondays at 13:20 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Regenerate activity feed
+        run: node scripts/gen-activity-feed.mjs
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain instruction-tracker/index.html)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add instruction-tracker/index.html
+            git commit -m "Auto-update instruction-tracker activity feed"
+            git push
+          else
+            echo "No changes to commit."
+          fi
