@@ -1,0 +1,43 @@
+name: Update instruction-tracker versions
+
+# Auto-resolves each report's CURRENT instructions edition - reads the live
+# "Current" instructions cover ("Effective June 2026" / "Modified March 31,
+# 2026"), the FFIEC filename date, or the index - and rewrites the versions
+# table on /instruction-tracker/. Weekly + on-demand.
+#
+# Note: ffiec.gov may 403 the CI datacenter IP. Any report that can't be
+# reached keeps its current page value (never blank, never wrong), so the
+# Fed/Treasury rows still refresh. For a guaranteed full refresh, run locally:
+#   python scripts/resolve_versions.py --write
+
+on:
+  schedule:
+    - cron: "30 13 * * 1"   # Mondays 13:30 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install pypdf
+      - name: Resolve current instruction editions
+        run: python scripts/resolve_versions.py --write
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain instruction-tracker/index.html)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add instruction-tracker/index.html
+            git commit -m "Auto-update instruction versions table"
+            git push
+          else
+            echo "No changes."
+          fi

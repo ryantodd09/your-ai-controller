@@ -73,6 +73,44 @@ REPORTS = [
 ]
 
 
+# Reports whose instructions are not a standalone, cover-readable PDF (embedded
+# in the form / inside the form ZIP), or a human-confirmed value the cover can't
+# express. These are explicit so the table is complete and honest.
+OVERRIDES = {
+    "FR Y-15": "January 2026 (as-of 12/31/2025)",   # PENDING verify (current cover reads Sep 2021)
+    "FR 2510": "September 2024",                      # confirmed; current cover reads "Effective July 2024"
+    "FR 2052a": "Current (instructions in form)",     # instructions embedded in the form
+}
+TIC_SRC = "https://home.treasury.gov/data/treasury-international-capital-tic-system/tic-forms-instructions"
+TIC = {  # Treasury TIC pages aren't auto-resolved yet; maintained values
+    "TIC B Forms": "November 2022", "TIC SLT": "December 2022", "TIC SHC / SHCA": "2025",
+    "TIC SHL / SHLA": "2025", "TIC D": "September 2018", "TIC TFC": "Current",
+}
+
+# The versions table, in display order. `val` is a function of the resolved
+# editions dict. Required auto reports must resolve or the write aborts.
+FR = "https://www.federalreserve.gov/apps/reportingforms/Report/Index/"
+FFI = "https://www.ffiec.gov/resources/reporting-forms/"
+TABLE = [
+    ("Call Report", "FFIEC 031 / 041 - Consolidated Reports of Condition and Income", "FFIEC", FFI + "ffiec031", lambda r: r["Call Report"]),
+    ("FR Y-9C", "Consolidated Financial Statements for Holding Companies", "Federal Reserve", FR + "FR_Y-9C", lambda r: r["FR Y-9C"]),
+    ("FR Y-14 (A / Q / M)", "Capital Assessments and Stress Testing", "Federal Reserve", FR + "FR_Y-14A", lambda r: f"{r['FR Y-14Q']} (Y-14A: {r['FR Y-14A']})"),
+    ("FR Y-15", "Banking Organization Systemic Risk Report", "Federal Reserve", FR + "FR_Y-15", lambda r: OVERRIDES["FR Y-15"]),
+    ("FFIEC 009", "Country Exposure Report", "FFIEC", FFI + "ffiec009", lambda r: r["FFIEC 009"]),
+    ("FR 2510", "Institution-to-Aggregate (I-A) Granular Data", "Federal Reserve", FR + "FR_2510", lambda r: OVERRIDES["FR 2510"]),
+    ("FR 2590", "Single-Counterparty Credit Limits (SCCL)", "Federal Reserve", FR + "FR_2590", lambda r: r["FR 2590"]),
+    ("FFIEC 101", "Advanced Approaches Regulatory Capital", "FFIEC", FFI + "ffiec101", lambda r: r["FFIEC 101"]),
+    ("FR 2052a", "Complex Institution Liquidity Monitoring Report", "Federal Reserve", FR + "FR_2052a", lambda r: OVERRIDES["FR 2052a"]),
+    ("TIC B Forms", "Banking claims &amp; liabilities (BC, BL, BQ)", "U.S. Treasury", TIC_SRC, lambda r: TIC["TIC B Forms"]),
+    ("TIC SLT", "Aggregate Holdings, Purchases &amp; Sales of Long-Term Securities", "U.S. Treasury", TIC_SRC, lambda r: TIC["TIC SLT"]),
+    ("TIC SHC / SHCA", "U.S. Ownership of Foreign Securities", "U.S. Treasury", TIC_SRC, lambda r: TIC["TIC SHC / SHCA"]),
+    ("TIC SHL / SHLA", "Foreign Holdings of U.S. Securities", "U.S. Treasury", TIC_SRC, lambda r: TIC["TIC SHL / SHLA"]),
+    ("TIC D", "Holdings of, and Transactions in, Financial Derivatives", "U.S. Treasury", TIC_SRC, lambda r: TIC["TIC D"]),
+    ("TIC TFC", "Treasury Foreign Currency forms (FC-1/2/3)", "U.S. Treasury", TIC_SRC, lambda r: TIC["TIC TFC"]),
+]
+REQUIRED = ["Call Report", "FR Y-9C", "FR Y-14Q", "FR Y-14A", "FFIEC 009", "FR 2590", "FFIEC 101"]
+
+
 def curl(url, out=None):
     args = ["curl", "-sSL", "-A", UA, "--max-time", "60", url]
     if out:
@@ -162,18 +200,55 @@ def main():
     ap.add_argument("--write", action="store_true", help="rewrite the versions table in the page")
     args = ap.parse_args()
 
-    rows, resolved = [], {}
+    resolved = {}
     for rep in REPORTS:
         ed, how = resolve(rep)
         resolved[rep["name"]] = ed
         print(f"{rep['name']:16} {str(ed):20} ({how})")
-        rows.append((rep, ed))
+
+    # Fallback: if a report can't be resolved (e.g. ffiec.gov blocks a CI
+    # datacenter IP), keep its CURRENT value from the page - never blank, never
+    # publish a wrong/partial label. So the Fed/Treasury rows update from CI even
+    # when the FFIEC ones can't be reached; a local run refreshes everything.
+    with open(FILE, encoding="utf-8") as f:
+        page = f.read()
+    body = page[page.find(START):page.find(END)] if START in page else ""
+    current = {n.strip(): v.strip() for n, v in
+               re.findall(r'class="rep">([^<]+).*?class="ver">([^<]+)', body)}
+
+    rows = []
+    for name, full, ag, src, vfn in TABLE:
+        try:
+            val = vfn(resolved)
+            if not val or "None" in val:
+                val = current.get(name) or val
+        except Exception:
+            val = current.get(name, "&mdash;")
+        rows.append(
+            f'          <tr><td class="rep">{name}<span class="full">{full}</span></td>'
+            f'<td class="ver">{val}</td><td><span class="ag">{ag}</span></td>'
+            f'<td class="src"><a href="{src}" target="_blank" rel="noopener">Official ↗</a></td></tr>'
+        )
+    block = "\n".join(rows)
 
     if not args.write:
-        print("\n(dry-run - rerun with --write to update the table)")
+        print("\n--- table preview ---")
+        print(block)
+        print("\n(dry-run - rerun with --write to update the page)")
         return
-    # table writing handled in --write mode (added once dry-run is verified)
-    print("\n--write not yet wired; verify dry-run first.")
+
+    with open(FILE, encoding="utf-8") as f:
+        page = f.read()
+    s, e = page.find(START), page.find(END)
+    if s == -1 or e == -1:
+        sys.exit(f"VERSIONS markers not found in {FILE}")
+    nxt = page[:s + len(START)] + "\n" + block + "\n          " + page[e:]
+    if nxt == page:
+        print("\nVersions table already up to date.")
+        return
+    with open(FILE, "w", encoding="utf-8", newline="\n") as f:
+        f.write(nxt)
+    print(f"\nVersions table updated ({len(TABLE)} rows).")
 
 
 if __name__ == "__main__":
