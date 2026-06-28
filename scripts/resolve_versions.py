@@ -77,7 +77,7 @@ REPORTS = [
 # in the form / inside the form ZIP), or a human-confirmed value the cover can't
 # express. These are explicit so the table is complete and honest.
 OVERRIDES = {
-    "FR Y-15": "January 2026 (as-of 12/31/2025)",   # PENDING verify (current cover reads Sep 2021)
+    "FR Y-15": "December 2022",   # page's newest "Instructions:" entry; cover's "Effective Sep 2021" is the substance date, not the edition label
     "FR 2510": "September 2024",                      # confirmed; current cover reads "Effective July 2024"
     "FR 2052a": "Current (instructions in form)",     # instructions embedded in the form
 }
